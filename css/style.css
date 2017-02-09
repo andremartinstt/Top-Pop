@@ -1,0 +1,128 @@
+/* HEADER */
+.navbar{
+	margin-bottom: 0;
+}
+
+.jumbotron{
+	color: #999999;
+	padding: 20px 0;
+	margin-bottom: 0;
+}
+
+/* SLIDESHOW */
+
+.slidebox{
+	margin-bottom: 50px;
+}
+
+/* SECTION */
+
+h1.section-title{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+/* POST */
+
+.post{
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #999;
+}
+
+.post-top{
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #999;
+	font-size: 12pt;
+}
+
+.post-top .post-title a.title-top{
+	color: #333333;
+}
+
+h2.post-title{
+	color: #3385ff;
+}
+
+.post .thumb{
+	margin-right: 10px;
+	width: 40%;
+}
+
+.post .thumb-max{
+	margin-right: 10px;
+	width: 50%;
+}
+
+.post .thumb img{
+	width: 100%;
+}
+
+.top-thumbnail{
+	margin-bottom: 10px;
+}
+
+.post .conteudo-botoes{
+	width: 100%;
+}
+
+.post-sobre{
+	font-size: 15pt;
+}
+
+/* PAGINATION */
+
+.pagination > li > a{
+	color: #595959;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+    color: #999999;
+}
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: #999999;
+  border-color: #999999;
+}
+
+.nav-pagination{
+	margin-bottom: 40px;
+}
+
+/* CONTATO */
+
+.box-contato{
+	margin-top: 40px;
+	font-size: 15pt;
+}
+
+/* FOOTER */
+
+footer{
+	background-color: #000;
+	color: #fff;
+	padding: 20px;
+	/*position: absolute;*/
+	margin-bottom: 0;
+	clear: both;
+}
+
+/* MEDIA QUERIE */
+/* Quando estiver em dipositivos pequenos, a imagem thumb ficará responsiva */
+
+@media screen and (max-width: 768px){
+	.post .thumb{
+		width: 100%;
+		margin-bottom: 20px;
+		margin-right: 0;
+	}
+}
