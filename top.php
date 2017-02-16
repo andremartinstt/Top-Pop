@@ -1,4 +1,17 @@
+<?php
+	require_once("config/connection.php");
+?>
+
+<?php
+	$sql = "SELECT * FROM noticias WHERE id_noticia =".$_GET["id_noticia"];
+	$result = mysqli_query($connection, $sql);
+?>
+
 <!DOCTYPE html>
+<?php
+	if ($row = mysqli_fetch_array($result)) {
+		
+?>
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8">
@@ -16,7 +29,8 @@
 	<section class="container">
 		<div class="row">
 			<section class="col-md-9">
-				<h1 class="section-title">Título do Post</h1>
+
+				<h1 class="section-title"><?php echo $row["titulo_noticia"]; ?></h1>
 
 				<article class="post-top clearfix">
 					<h2 class="post-title">
@@ -90,5 +104,7 @@
 
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+
+	<?php } ?>
 </body>
 </html>

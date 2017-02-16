@@ -1,3 +1,7 @@
+<?php
+	require_once("config/connection.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -23,72 +27,36 @@
 	<section class="container">
 		<div class="row">
 			<section class="col-md-9">
+				<?php
+					$sql = "SELECT * FROM noticias WHERE categoria_noticia = 'animes' order by id_noticia desc";
+					$result = mysqli_query($connection, $sql);
+				?>
+
 				<h1 class="section-title">Posts Recentes</h1>
+
+				<?php 
+					while ($row = mysqli_fetch_array($result)) {		
+					
+				?>
+
 				<article class="post clearfix">
-					<a href="top.php" class="thumb pull-left">
-						<img class="img-thumbnail" src="img/img.jpg">
+					<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>" class="thumb pull-left">
+						<img class="img-thumbnail" src="img/<?php echo $row['img_noticia']; ?>">
 					</a>
 					<h2 class="post-title">
-						<a href="top.php">Inicia projetos HTML5 mais rápido com Initializr</a>
+						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>"><?php echo $row["titulo_noticia"]; ?></a>
 					</h2>
-					<p><span>26 de Janeiro de 2015</span> por <span><a href="#">Autor Desconhecido</a></span></p>
+					<p><span><?php echo $row["data_noticia"]; ?></span> por <span><a href="#"><?php echo $row["usuario"]; ?></a></span></p>
 					<p class="text-justify">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						<?php echo $row["conteudo_noticia"]; ?>
 					</p>
 					<div class="conteudo-botoes">
-						<a href="top.php" class="btn btn-default">Ler Mais</a>
+						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>" class="btn btn-default">Ler Mais</a>
 						<a href="#" class="btn btn-danger">Comentários <span class="badge">26</span></a>
 					</div>
 				</article>
 
-				<article class="post clearfix">
-					<a href="top.php" class="thumb pull-left">
-						<img class="img-thumbnail" src="img/img.jpg">
-					</a>
-					<h2 class="post-title">
-						<a href="top.php">Inicia projetos HTML5 mais rápido com Initializr</a>
-					</h2>
-					<p><span>26 de Janeiro de 2015</span> por <span><a href="#">Autor Desconhecido</a></span></p>
-					<p class="text-justify">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
-					<div class="conteudo-botoes">
-						<a href="top.php" class="btn btn-default">Ler Mais</a>
-						<a href="#" class="btn btn-danger">Comentários <span class="badge">26</span></a>
-					</div>
-				</article>
-
-				<article class="post clearfix">
-					<a href="top.php" class="thumb pull-left">
-						<img class="img-thumbnail" src="img/img.jpg">
-					</a>
-					<h2 class="post-title">
-						<a href="top.php">Inicia projetos HTML5 mais rápido com Initializr</a>
-					</h2>
-					<p><span>26 de Janeiro de 2015</span> por <span><a href="#">Autor Desconhecido</a></span></p>
-					<p class="text-justify">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
-					<div class="conteudo-botoes">
-						<a href="top.php" class="btn btn-default">Ler Mais</a>
-						<a href="#" class="btn btn-danger">Comentários <span class="badge">26</span></a>
-					</div>
-				</article>
+				<?php } ?>
 
 				<nav class="nav-pagination">
 					<div class="center-block">

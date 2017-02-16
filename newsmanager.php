@@ -21,25 +21,28 @@
 	<div class="container box-contato">
 		<div class="row">
 			<section class="col-md-6">
-				<form>
+				<form action="newsconfig.php" method="POST" enctype="multipart/form-data">
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Título do Post" required="required">
+						<input type="text" class="form-control" name="titulo-post" placeholder="Título do Post" required="required">
 					</div>
 					<div class="form-group">
-						<textarea class="form-control" rows="3" placeholder="Conteúdo do Post" required="required"></textarea>
+						<textarea class="form-control" rows="3" name="conteudo-post" placeholder="Conteúdo do Post" required="required"></textarea>
 					</div>
 					<div class="form-group">
-						<select class="form-control">
-						<option>Cinema e TV</option>
-						<option>Música</option>
-						<option>Games</option>
-						<option>Animes</option>
-					</select>
+						<select class="form-control" name="categoria-post">
+							<option value="cinema">Cinema e TV</option>
+							<option value="musica">Música</option>
+							<option value="games">Games</option>
+							<option value="animes">Animes</option>
+						</select>
 					</div>					
 					<div class="form-group">
-					    <input type="file" id="exampleInputFile">
+					    <input type="file" name="imagem-post" id="inputFile">
 					    <p class="help-block">Imagem do Post</p>
 					</div>
+					<button class="btn btn-primary" type="submit">
+						Enviar
+					</button>
 				</form>
 			</section>
 

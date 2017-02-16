@@ -63,14 +63,16 @@
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
 						        <button type="submit" class="btn btn-primary">Entrar</button>
-						        <p class="text-center text-danger">
-						        	<?php
-						        		if(isset($_SESSION['loginErro'])){
-						        			echo $_SESSION['loginErro'];
-						        			unset($_SESSION['loginErro']);
-						        		}						        		
-						        	?>
-						        </p>
+						        <div>
+						        	<p class="text-center text-danger">
+							        	<?php
+							        		if(isset($_SESSION['loginErro'])){
+							        			echo $_SESSION['loginErro'];
+							        			unset($_SESSION['loginErro']);
+							        		}						        		
+							        	?>
+							        </p>
+						        </div>
 						      </div>
 						    </div>
 					  	</form>
