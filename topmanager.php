@@ -63,8 +63,7 @@
 			</section>
 
 			<aside class="col-md-3 col-md-offset-3">
-			<?php echo "Bem Vindo ". $_SESSION['nome'] . "!"; ?>
-			<a href="logout.php">Sair</a>
+			
 			</aside>
 		</div>
 	</div>

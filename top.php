@@ -1,5 +1,6 @@
 <?php
 	require_once("config/connection.php");
+	session_start();
 ?>
 
 <?php
@@ -95,6 +96,17 @@
 				<h1 class="section-title">Comentários</h1>
 				
 			</section>
+
+			<aside class="col-md-3">
+				<?php
+					if (isset($_SESSION['usuario'])) {
+						
+				?>
+					<?php echo "Bem Vindo " ?><a href="newsmanager.php"><?php echo $_SESSION['nome']; ?></a><?php echo "!"; ?>
+					<a href="logout.php">Sair</a>
+				<?php } ?>
+			</aside>
+
 		</div>
 	</section>
 	

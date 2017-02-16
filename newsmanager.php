@@ -1,6 +1,6 @@
 <?php
 	require_once("config/connection.php");
-	session_start();
+	require_once("config/finishsession.php");
 ?>
 
 <!DOCTYPE html>
@@ -47,8 +47,8 @@
 			</section>
 
 			<aside class="col-md-3 col-md-offset-3">
-			<?php echo "Bem Vindo ". $_SESSION['nome'] . "!"; ?>
-			<a href="logout.php">Sair</a>
+				<?php echo "Bem Vindo ". $_SESSION['nome'] . "!"; ?>
+				<a href="logout.php">Sair</a>
 			</aside>
 		</div>
 	</div>

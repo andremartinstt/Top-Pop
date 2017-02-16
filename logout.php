@@ -9,6 +9,6 @@
 		$_SESSION['senha']
 	);
 
-	header("Location: index.php");
+	header("Location: contato.php");
 
 ?>

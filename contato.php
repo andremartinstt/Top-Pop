@@ -38,6 +38,14 @@
 			</section>
 
 			<aside class="col-md-3 col-md-offset-3">
+
+				<?php
+					if (isset($_SESSION['usuario'])) {
+						
+				?>
+					<?php echo "Bem Vindo " ?><a href="newsmanager.php"><?php echo $_SESSION['nome']; ?></a><?php echo "!"; ?>
+					<a href="logout.php">Sair</a>
+				<?php } else{ ?>
 			
 				<button data-toggle="modal" data-target="#myModal" role="button" type="submit" class="btn btn-default">
 					<span class="glyphicon glyphicon-user"></span>
@@ -78,7 +86,9 @@
 					  	</form>
 					    
 					  </div>
-					</div>							
+					</div>
+
+					<?php } ?>					
 
 			</aside>
 
