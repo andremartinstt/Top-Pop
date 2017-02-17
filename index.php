@@ -30,8 +30,7 @@
 			<section class="col-md-9">
 
 				<?php
-					$sql = "SELECT * FROM noticias order by id_noticia desc";
-					$result = mysqli_query($connection, $sql);
+					include "includes/pagination-config.php"; 
 				?>
 
 				<h1 class="section-title">Posts Recentes</h1>
@@ -46,7 +45,7 @@
 						<img class="img-thumbnail" src="img/<?php echo $row['img_noticia']; ?>">
 					</a>
 					<h2 class="post-title">
-						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>"><?php echo $row["titulo_noticia"]; ?></a>
+						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>"><?php echo $row["titulo_noticia"].$row["id_noticia"]; ?></a>
 					</h2>
 					<p><span><?php echo $row["data_noticia"]; ?></span> por <span><a href="#"><?php echo $row["usuario"]; ?></a></span></p>
 					<p class="text-justify">
@@ -60,20 +59,7 @@
 
 				<?php } ?>
 
-				<nav class="nav-pagination">
-					<div class="center-block">
-						<ul class="pagination">
-							<li class="disabled"><a href="#">&laquo;<span class="sr-only">Anterior</span></a></li>
-							<li class="active"><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-							<li><a href="#">6</a></li>
-							<li><a href="#">&raquo;<span class="sr-only">Próximo</span></a></li>
-						</ul>
-					</div>
-				</nav>
+				<?php include "includes/pagination.php"; ?>
 				
 			</section>
 

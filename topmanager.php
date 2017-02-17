@@ -40,7 +40,7 @@
 	
 				?>
 					<div class="post">
-						<h3>Posição#<?php echo $i; ?></h3>
+						<h3>Posição#<?php echo $i + 1; ?></h3>
 						<input type="hidden" name="posicao-top[]" value="<?php echo $i; ?>">
 						<input type="hidden" name="id-top[]" value="<?php echo $id; ?>">
 						<div class="form-group">
