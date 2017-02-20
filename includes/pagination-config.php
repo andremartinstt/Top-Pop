@@ -12,7 +12,7 @@
 		$pagina = $_GET['pagina'];
 	}
 
-	$pagina_result = ($pagina-1)*$itens_pag;
+	$pagina_result = ($pagina-1)*$itens_pag; // A partir do registro 0, pega 10 registros, etc
 
 	$sql = "SELECT * FROM noticias order by id_noticia desc LIMIT $pagina_result, $itens_pag";
 	$result = $connection->query($sql) or die($connection->error);
