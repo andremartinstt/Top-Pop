@@ -30,9 +30,9 @@
 						<li><a href="contato.php">Contato</a></li>
 					</ul>
 
-					<form action="" class="navbar-form navbar-right" role="search">
+					<form action="search.php" class="navbar-form navbar-right" role="search" method="GET">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="buscar">
+							<input type="text" class="form-control"  name="search" placeholder="buscar">
 						</div>
 						<button type="submit" class="btn btn-danger">
 							<span class="glyphicon glyphicon-search"></span>
