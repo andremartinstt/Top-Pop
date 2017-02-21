@@ -20,18 +20,22 @@
 	<div class="container box-contato">
 		<div class="row">
 			<section class="col-md-6">
-				<form>
+				<form action="sendmail.php" method="POST">
 					<div class="form-group">
 						<label for="nomecontato">Nome Completo</label>
-						<input type="text" class="form-control" placeholder="Nome Completo" required="required">
+						<input type="text" class="form-control" placeholder="Nome Completo" name="nome" required="required">
 					</div>
 					<div class="form-group">
 						<label for="emailcontato">E-mail</label>
-						<input type="email" class="form-control" placeholder="E-mail" required="required">
+						<input type="email" class="form-control" placeholder="E-mail" name="email" required="required">
+					</div>
+					<div class="form-group">
+						<label for="assuntocontato">Assunto</label>
+						<input type="text" class="form-control" placeholder="Assunto da Mensagem" name="assunto" required="required">
 					</div>
 					<div class="form-group">
 						<label for="msgcontato">Mensagem</label>
-						<textarea class="form-control"></textarea>
+						<textarea class="form-control" name="msg"></textarea>
 					</div>
 					<button type="submit" class="btn btn-primary">Enviar</button>
 				</form>
