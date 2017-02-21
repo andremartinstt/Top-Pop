@@ -13,7 +13,7 @@
 				<!-- Inicia Menu -->
 				<div class="collapse navbar-collapse" id="navegacion-fm">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="index.php">Início</a></li>
+						<li><a href="index.php">Início</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
 								Categorias <span class="caret"></span>

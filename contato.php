@@ -27,7 +27,7 @@
 					</div>
 					<div class="form-group">
 						<label for="emailcontato">E-mail</label>
-						<input type="password" class="form-control" placeholder="E-mail" required="required">
+						<input type="email" class="form-control" placeholder="E-mail" required="required">
 					</div>
 					<div class="form-group">
 						<label for="msgcontato">Mensagem</label>

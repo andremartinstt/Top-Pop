@@ -30,8 +30,22 @@
 			<section class="col-md-9">
 
 				<?php
-					$sql = "SELECT * FROM noticias WHERE categoria_noticia = 'cinema' order by id_noticia desc";
-					$result = mysqli_query($connection, $sql);
+
+					$itens_pag = 10; // Itens por página
+
+					$num_total = $connection->query("SELECT * FROM noticias WHERE categoria_noticia = 'cinema'")->num_rows; // Qtd de registros
+					$num_paginas = ceil($num_total/$itens_pag);
+
+					if(!isset($_GET['pagina'])){
+						$pagina = 1;
+					} else{
+						$pagina = $_GET['pagina'];
+					}
+
+					$pagina_result = ($pagina-1)*$itens_pag; // A partir do registro 0, pega 10 registros, etc
+
+					$sql = "SELECT * FROM noticias WHERE categoria_noticia = 'cinema' order by id_noticia desc LIMIT $pagina_result, $itens_pag";
+					$result = $connection->query($sql) or die($connection->error);
 				?>
 
 				<h1 class="section-title">Posts Recentes</h1>
@@ -63,14 +77,27 @@
 				<nav class="nav-pagination">
 					<div class="center-block">
 						<ul class="pagination">
-							<li class="disabled"><a href="#">&laquo;<span class="sr-only">Anterior</span></a></li>
-							<li class="active"><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-							<li><a href="#">6</a></li>
-							<li><a href="#">&raquo;<span class="sr-only">Próximo</span></a></li>
+							<?php
+								$dis_ini = "";
+								if($pagina == 1){
+									$dis_ini = "class=\"disabled\"";
+								}
+
+								$dis_ult = "";
+								if($pagina == $num_paginas){ // Última página
+									$dis_ult = "class=\"disabled\"";
+								}
+							?>
+							<li <?php echo $dis_ini; ?> ><a href="topmovie.php?pagina=<?php echo $pagina-1 ?>">&laquo;<span class="sr-only">Anterior</span></a></li>
+							<?php
+								for ($i=1; $i <= $num_paginas ; $i++) { 
+									$estilo = "";
+									if($pagina == $i)
+										$estilo = "class=\"active\"";
+							?>
+							<li <?php echo $estilo; ?> ><a href="topmovie.php?pagina=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+							<?php } ?>
+							<li <?php echo $dis_ult; ?> ><a href="topmovie.php?pagina=<?php echo $pagina+1; ?>">&raquo;<span class="sr-only">Próximo</span></a></li>
 						</ul>
 					</div>
 				</nav>

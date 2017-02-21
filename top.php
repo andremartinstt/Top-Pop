@@ -33,27 +33,31 @@
 
 				<h1 class="section-title"><?php echo $row["titulo_noticia"]; ?></h1>
 
+				<?php 
+					$sql_top = "SELECT * FROM item_noticia WHERE id_noticia =".$_GET["id_noticia"]." order by posicao_item desc";
+					$result_top = mysqli_query($connection, $sql_top);
+
+					while ($row_top = mysqli_fetch_array($result_top)) {	
+				?>
+
 				<article class="post-top clearfix">
 					<h2 class="post-title">
-						<a class="title-top" href="#">Posição#10</a>
+						<a class="title-top" href="#">Posição#<?php echo $row_top["posicao_item"]; ?></a>
 					</h2>
 					<a href="#" class="thumb-max pull-left">
-						<img class="img-thumbnail top-thumbnail" src="img/img.jpg">
+						<img class="img-thumbnail top-thumbnail" src="img/top/<?php echo $row_top['img_item']; ?>">
 					</a>
 					<h2 class="post-title">
-						Star Wars
+						<?php echo $row_top["titulo_item"]; ?>
 					</h2>
 					<p class="text-justify">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						<?php echo $row_top["conteudo_item"]; ?>
 					</p>
 				</article>
 
-				<article class="post-top clearfix">
+				<?php } ?>
+
+				<!--<article class="post-top clearfix">
 					<h2 class="post-title">
 						<a class="title-top" href="#">Top#10</a>
 					</h2>
@@ -91,7 +95,7 @@
 						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 					</p>
-				</article>
+				</article>-->
 
 				<h1 class="section-title">Comentários</h1>
 				
