@@ -20,8 +20,8 @@
 
 	<section class="jumbotron">
 		<div class="container">
-			<h1>Resultados da Pesquisa</h1>
-			<p>Top Pop</p>
+			<h1>Top Pop</h1>
+			<p>Ranking dos assuntos da cultura pop</p>
 		</div>
 	</section>
 
@@ -38,7 +38,7 @@
 						$search_valor = $_GET['search'];
 					}					
 
-					$num_total = $connection->query("SELECT * FROM noticias WHERE titulo_noticia LIKE '%$search_valor'")->num_rows; // Qtd de registros
+					$num_total = $connection->query("SELECT * FROM noticias WHERE titulo_noticia LIKE '%$search_valor%'")->num_rows; // Qtd de registros
 					$num_paginas = ceil($num_total/$itens_pag);
 
 					if(!isset($_GET['pagina'])){
@@ -53,7 +53,7 @@
 					$result = $connection->query($sql) or die($connection->error); 
 				?>
 
-				<h1 class="section-title">Posts Recentes</h1>
+				<h1 class="section-title">Resultados da Pesquisa</h1>
 
 				<?php 
 					while ($row = mysqli_fetch_array($result)) {		

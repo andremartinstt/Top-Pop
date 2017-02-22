@@ -53,7 +53,12 @@
 					</p>
 					<div class="conteudo-botoes">
 						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>" class="btn btn-default">Ler Mais</a>
-						<a href="#" class="btn btn-danger">Comentários <span class="badge">26</span></a>
+						<a href="#" class="btn btn-primary">Comentários <span class="badge">26</span></a>
+						<?php 
+							if (isset($_SESSION['usuario'])) {
+						?>
+						<a href="delete-post.php?id_noticia=<?php echo $row['id_noticia']; ?>" class="btn btn-danger">Apagar</a>
+						<?php } ?>
 					</div>
 				</article>
 

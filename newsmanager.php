@@ -49,6 +49,12 @@
 			<aside class="col-md-3 col-md-offset-3">
 				<?php echo "Bem Vindo ". $_SESSION['nome'] . "!"; ?>
 				<a href="logout.php">Sair</a>
+				<br><br>
+				<div class="form-group">
+					<p class="form-control">
+						<a href="newuser.php">Criar novo usuário</a>
+					</p>
+				</div>
 			</aside>
 		</div>
 	</div>
