@@ -58,6 +58,7 @@
 							if (isset($_SESSION['usuario'])) {
 						?>
 						<a href="delete-post.php?id_noticia=<?php echo $row['id_noticia']; ?>" class="btn btn-danger">Apagar</a>
+						<a href="editpost.php?id_noticia=<?php echo $row['id_noticia']; ?>" class="btn btn-warning">Editar</a>
 						<?php } ?>
 					</div>
 				</article>

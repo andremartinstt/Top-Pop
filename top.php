@@ -56,48 +56,6 @@
 				</article>
 
 				<?php } ?>
-
-				<!--<article class="post-top clearfix">
-					<h2 class="post-title">
-						<a class="title-top" href="#">Top#10</a>
-					</h2>
-					<a href="#" class="thumb-max pull-left">
-						<img class="img-thumbnail top-thumbnail" src="img/img.jpg">
-					</a>
-					<h2 class="post-title">
-						Inicia projetos HTML5 mais rápido com Initializr
-					</h2>
-					<p class="text-justify">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
-				</article>
-
-				<article class="post-top clearfix">
-					<h2 class="post-title">
-						<a class="title-top" href="#">Top#10</a>
-					</h2>
-					<a href="#" class="thumb-max pull-left">
-						<img class="img-thumbnail top-thumbnail" src="img/img.jpg">
-					</a>
-					<h2 class="post-title">
-						Inicia projetos HTML5 mais rápido com Initializr
-					</h2>
-					<p class="text-justify">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
-				</article>-->
-
-				<h1 class="section-title">Comentários</h1>
 				
 			</section>
 
@@ -113,6 +71,49 @@
 
 		</div>
 	</section>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="form-area">
+					<form action="coments.php" method="POST" role="form">
+						<br style="clear:both">
+						<h3 style="margin-bottom: 25px;">Escreva Um Comentário</h3>
+						<div class="form-group">
+							<input type="text" name="name" class="form-control" id="name" placeholder="nome" required>
+						</div>
+						<div class="form-group">
+							<input type="email" name="email" class="form-control" id="email" placeholder="E-mail" required>
+						</div>
+						<div class="form-group">
+							<textarea class="form-control" type="textarea" name="message" id="message" placeholder="Mensagem" rows="7"></textarea>
+						</div>
+						<input type="hidden" name="id_noticia" value="<?php echo $_GET['id_noticia']; ?>">
+						<button type="submit" id="submit" name="submit" class="btn btn-primay">Comentar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<br>
+		<?php 
+			$sql_coment = "SELECT * FROM comentarios WHERE id_noticia=".$_GET["id_noticia"]." ORDER BY id_comentario DESC";
+			$result_coment = mysqli_query($connection, $sql_coment);
+		?>
+		<div class="row">
+			<div class="form-area">
+				<h4>Comentários:</h4>
+				<?php
+					while($row_coment = mysqli_fetch_array($result_coment)){
+				?>
+					<div class="col-md-8">
+						<hr>
+						<p><strong><?php echo $row_coment["nome_usuario"]; ?>:</strong></p>
+						<p><?php echo $row_coment["conteudo_comentario"]; ?></p>
+					</div>
+				<?php } ?>
+			</div>
+		</div>
+	</div>
 	
 	<?php
 		include "includes/footer.php"

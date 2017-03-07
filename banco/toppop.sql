@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 22-Fev-2017 às 17:09
+-- Generation Time: 07-Mar-2017 às 20:46
 -- Versão do servidor: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -39,7 +39,33 @@ CREATE TABLE `adm` (
 
 INSERT INTO `adm` (`id`, `usuario`, `senha`, `nome`) VALUES
 (1, 'pedro', '123', 'Pedro'),
-(2, 'lucas', '123', 'Lucas');
+(2, 'lucas', '123', 'Lucas'),
+(14, 'lara', '1234', 'Lara'),
+(13, 'fernando', '1234', 'Fernando');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `comentarios`
+--
+
+CREATE TABLE `comentarios` (
+  `id_comentario` int(11) NOT NULL,
+  `nome_usuario` varchar(250) NOT NULL,
+  `email_usuario` varchar(250) NOT NULL,
+  `conteudo_comentario` text NOT NULL,
+  `id_noticia` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `comentarios`
+--
+
+INSERT INTO `comentarios` (`id_comentario`, `nome_usuario`, `email_usuario`, `conteudo_comentario`, `id_noticia`) VALUES
+(1, 'Amanda', 'amanda@gmail.com', 'Comentario amanda', 33),
+(2, 'Leticia', 'leticia@gmail.com', 'ComentÃ¡rio LeticÃ­ca', 33),
+(3, 'Pedro', 'pedro@hotmail.com', 'ComentÃ¡rio Pedro', 33),
+(4, 'Raul', 'raul@gmail.com', 'ComentÃ¡rio Raul', 34);
 
 -- --------------------------------------------------------
 
@@ -64,10 +90,6 @@ INSERT INTO `item_noticia` (`id_item`, `titulo_item`, `conteudo_item`, `img_item
 (45, 'Hola3', 'gfgf', 'the-great-outdoors_1281_1600x1200.jpg', 3, 35),
 (44, 'Hola2', 'gfg', 'Paisagem_imagem_linda_-52.jpg', 2, 35),
 (43, 'Hola1', 'gfg', 'Nature__039571_.jpg', 1, 35),
-(30, 'Hola3hghg', 'gfg', '46f7417567b3aa8d9560cd6df85d5b8e.jpg', 2, 30),
-(31, 'Hey1', 'gfgf', 'c0d109b1281d2998ddb951e60e067890.jpg', 0, 31),
-(32, 'Hey2', 'gfgf', 'c0d109b1281d2998ddb951e60e067890.jpg', 1, 31),
-(33, 'Hey3g', 'gfgf', 'c0d109b1281d2998ddb951e60e067890.jpg', 2, 31),
 (34, 'fgf', 'gffg', '2c995da864d734d03139eb6df6658680.jpg', 0, 32),
 (35, 'fgf', 'gfgf', '2c995da864d734d03139eb6df6658680.jpg', 1, 32),
 (36, 'gfgf', 'fgf', '2c995da864d734d03139eb6df6658680.jpg', 2, 32),
@@ -124,16 +146,10 @@ INSERT INTO `noticias` (`id_noticia`, `titulo_noticia`, `conteudo_noticia`, `img
 (23, 'teste', 'teste', '00e2725684366f16c2654d3e3d42e907.jpg', '2017-02-16', 'Pedro', 'games'),
 (24, 'Hola', 'gfgf', 'f6fb3e1baf88daacab8fdac38c576e2f.jpg', '2017-02-16', 'Pedro', 'musica'),
 (25, 'Hey', 'gff', '74c79b46ee7a92cfb7abbe1dea272095.jpg', '2017-02-16', 'Pedro', 'cinema'),
-(26, 'Ggfg', 'gf', 'e883416ad780d847a433a11c592e46af.jpg', '2017-02-16', 'Pedro', 'cinema'),
 (27, 'Gf', 'fg', 'b381a93f4e1ddd49412d0906fcfe4475.jpg', '2017-02-16', 'Pedro', 'games'),
-(28, 'tr', 'gf', 'cd38508b4029d182897766d242653f53.jpg', '2017-02-16', 'Pedro', 'animes'),
 (29, 'Novo', 'gfgfgf', 'ec367de928602e75bc41e962521fd40a.jpg', '2017-02-16', 'Pedro', 'musica'),
-(30, 'teste', 'ted', '2cc50bbc03dd28c93659e1aee42efc54.jpg', '2017-02-16', 'Pedro', 'cinema'),
-(31, 'trt', 'gfgf', 'd4528168631feb9322d1cd5452d34d1d.jpg', '2017-02-16', 'Pedro', 'cinema'),
-(32, 'Novo', 'gfgf', '537db00554eb16b75192a6930adb91b3.jpg', '2017-02-16', 'Pedro', 'cinema'),
 (33, 'Novo teste', 'hghgh', '89abdb35433a23c7734a625927576ac9.jpg', '2017-02-16', 'Lucas', 'cinema'),
-(34, 'Outro teste', 'gfg', 'f7f9fdaedbe4c2f8373b6c08fe9d8cd2.jpg', '2017-02-16', 'Lucas', 'cinema'),
-(35, 'Hola', 'gfgfd', 'e117d82e932a2b0ee32fcc2f249d364c.jpg', '2017-02-16', 'Lucas', 'musica');
+(34, 'Editado', 'Editado Edt', 'f7f9fdaedbe4c2f8373b6c08fe9d8cd2.jpg', '2017-02-16', 'Lucas', 'cinema');
 
 --
 -- Indexes for dumped tables
@@ -144,6 +160,12 @@ INSERT INTO `noticias` (`id_noticia`, `titulo_noticia`, `conteudo_noticia`, `img
 --
 ALTER TABLE `adm`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `comentarios`
+--
+ALTER TABLE `comentarios`
+  ADD PRIMARY KEY (`id_comentario`);
 
 --
 -- Indexes for table `item_noticia`
@@ -165,7 +187,12 @@ ALTER TABLE `noticias`
 -- AUTO_INCREMENT for table `adm`
 --
 ALTER TABLE `adm`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT for table `comentarios`
+--
+ALTER TABLE `comentarios`
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `item_noticia`
 --
