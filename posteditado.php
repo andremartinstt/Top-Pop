@@ -15,8 +15,11 @@
 	mysqli_query($connection, $edit_post);
 
 	if($edit_post){
-		header("Location: index.php");
+		echo "<script>alert('Post Editado com Sucesso!');location.href=\"index.php\";</script>";
 	}else{
 		echo $connection->error;
 	}
+
+
+	//header("Location: index.php");
 ?>

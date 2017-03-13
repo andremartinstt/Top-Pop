@@ -7,9 +7,19 @@
 
 	$delete_item = "DELETE FROM item_noticia WHERE id_noticia=$id_noticia";
 
+	$delete_coment = "DELETE FROM comentarios WHERE id_noticia=$id_noticia";
+
 	mysqli_query($connection,$delete_post);
 
 	mysqli_query($connection,$delete_item);
 
-	header("Location: postdeletado.php");
+	mysqli_query($connection,$delete_coment);
+
+	if($delete_post){
+		echo "<script>alert('Post Excluído com Sucesso!');location.href=\"index.php\";</script>";
+	}else{
+		echo $connection->error;
+	}
+
+	//header("Location: postdeletado.php");
 ?>

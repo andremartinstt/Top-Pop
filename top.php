@@ -75,10 +75,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-				<div class="form-area">
+				<div class="form-area area-bottom">
 					<form action="coments.php" method="POST" role="form">
 						<br style="clear:both">
-						<h3 style="margin-bottom: 25px;">Escreva Um Comentário</h3>
+						<h3 style="margin-bottom: 25px;">Escreva um comentário</h3>
 						<div class="form-group">
 							<input type="text" name="name" class="form-control" id="name" placeholder="nome" required>
 						</div>
@@ -94,23 +94,24 @@
 				</div>
 			</div>
 		</div>
-		<br>
 		<?php 
 			$sql_coment = "SELECT * FROM comentarios WHERE id_noticia=".$_GET["id_noticia"]." ORDER BY id_comentario DESC";
 			$result_coment = mysqli_query($connection, $sql_coment);
 		?>
 		<div class="row">
-			<div class="form-area">
-				<h4>Comentários:</h4>
-				<?php
-					while($row_coment = mysqli_fetch_array($result_coment)){
-				?>
-					<div class="col-md-8">
+			<div class="form-area area-bottom">
+				<div class="col-md-8">
+					<h3>Comentários:</h3>
+					<?php
+						while($row_coment = mysqli_fetch_array($result_coment)){
+					?>
+					
 						<hr>
 						<p><strong><?php echo $row_coment["nome_usuario"]; ?>:</strong></p>
 						<p><?php echo $row_coment["conteudo_comentario"]; ?></p>
-					</div>
+				
 				<?php } ?>
+				</div>
 			</div>
 		</div>
 	</div>

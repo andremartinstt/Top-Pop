@@ -35,8 +35,9 @@
 
 				<h1 class="section-title">Posts Recentes</h1>
 
-				<?php 
-					while ($row = mysqli_fetch_array($result)) {		
+				<?php
+					
+					while ($row = mysqli_fetch_array($result)) {
 					
 				?>
 
@@ -57,7 +58,7 @@
 						<?php 
 							if (isset($_SESSION['usuario'])) {
 						?>
-						<a href="delete-post.php?id_noticia=<?php echo $row['id_noticia']; ?>" class="btn btn-danger">Apagar</a>
+						<a onclick="ConfirmaExclusao('<?php echo $row['id_noticia']; ?>')" class="btn btn-danger">Apagar</a>
 						<a href="editpost.php?id_noticia=<?php echo $row['id_noticia']; ?>" class="btn btn-warning">Editar</a>
 						<?php } ?>
 					</div>
@@ -85,6 +86,14 @@
 		include "includes/footer.php"
 	?>
 
+	<script language='JavaScript' type='text/javascript'>
+		function ConfirmaExclusao(id) {
+		  if( confirm( 'Confirma Exclusão?' ) ) {
+		  		// location="delete-post.php?id_noticia=id";
+		  		location.href = "delete-post.php?id_noticia=" + id;
+		  }
+		}
+	</script>
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 </body>
