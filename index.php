@@ -53,8 +53,15 @@
 						<?php echo $row["conteudo_noticia"]; ?>
 					</p>
 					<div class="conteudo-botoes">
+
+						<?php
+							$sql_coments = "SELECT id_noticia FROM comentarios WHERE id_noticia=".$row["id_noticia"];
+							$result_coments = mysqli_query($connection, $sql_coments);
+							$row_cnt["id_noticia"] = $result_coments->num_rows;
+						?>
+
 						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>" class="btn btn-default">Ler Mais</a>
-						<a href="#" class="btn btn-primary">Comentários <span class="badge">26</span></a>
+						<a href="#" class="btn btn-primary">Comentários <span class="badge"><?php echo $row_cnt["id_noticia"] ?></span></a>
 						<?php 
 							if (isset($_SESSION['usuario'])) {
 						?>
