@@ -61,13 +61,13 @@
 					<h2 class="post-title">
 						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>"><?php echo $row["titulo_noticia"]; ?></a>
 					</h2>
-					<p><span><?php echo $row["data_noticia"]; ?></span> por <span><a href="#"><?php echo $row["usuario"]; ?></a></span></p>
+					<p><span><?php echo date("d/m/Y", strtotime($row["data_noticia"])); ?></span> por <span><a href="#"><?php echo $row["usuario"]; ?></a></span></p>
 					<p class="text-justify">
 						<?php echo $row["conteudo_noticia"]; ?>
 					</p>
 					<div class="conteudo-botoes">
 						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>" class="btn btn-default">Ler Mais</a>
-						<a href="#" class="btn btn-danger">Comentários <span class="badge">26</span></a>
+						<a href="#" class="btn btn-primary">Comentários <span class="badge">26</span></a>
 					</div>
 				</article>
 
