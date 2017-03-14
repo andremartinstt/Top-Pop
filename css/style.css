@@ -112,14 +112,26 @@ h2.post-title{
 
 /* FOOTER */
 
-footer{
+.large-page{
+	position: absolute;
 	background-color: #000;
 	color: #fff;
 	padding: 20px;
-	/*position: absolute;*/
 	margin-top: 10px;
 	margin-bottom: 0;
-	clear: both;
+	/*clear: both;*/
+	width: 100%;
+}
+
+.small-page{
+	position: absolute;
+	background-color: #000;
+	color: #fff;
+	padding: 20px;
+	margin-top: 10px;
+	bottom: 0;
+	/*clear: both;*/
+	width: 100%;
 }
 
 /* MEDIA QUERIE */
