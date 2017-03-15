@@ -122,8 +122,6 @@
 				</article>
 
 				<?php } ?>
-
-				<?php include "includes/pagination.php"; ?>
 				
 			</section>
 
@@ -135,8 +133,32 @@
 					<?php echo "Bem Vindo " ?><a href="newsmanager.php"><?php echo $_SESSION['nome']; ?></a><?php echo "!"; ?>
 					<a href="logout.php">Sair</a>
 				<?php } ?>
+				<h4>Categorias</h4>
+				<div class="list-group">
+					<a href="#" class="list-group-item active">Início</a>
+					<a href="#" class="list-group-item">Cinema e TV</a>
+					<a href="#" class="list-group-item">Música</a>
+					<a href="#" class="list-group-item">Games</a>
+					<a href="#" class="list-group-item">Animes</a>
+				</div>
+
+				<h4>Os posts mais comentados</h4>
+				<a href="#" class="list-group-item">
+					<h4 class="list-group-item-heading">Inicia projetos HTML5 mais rápido com Initializr</h4>
+					<p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+				</a>
+				<a href="#" class="list-group-item">
+					<h4 class="list-group-item-heading">Inicia projetos HTML5 mais rápido com Initializr</h4>
+					<p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+				</a>
+				<a href="#" class="list-group-item">
+					<h4 class="list-group-item-heading">Inicia projetos HTML5 mais rápido com Initializr</h4>
+					<p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+				</a>
 			</aside>
+
 		</div>
+		<?php include "includes/pagination.php"; ?>
 	</section>
 
 	<?php

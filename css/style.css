@@ -71,6 +71,12 @@ h2.post-title{
 	font-size: 15pt;
 }
 
+/* ASIDE */
+
+aside{
+	margin-top: 50px;
+}
+
 /* PAGINATION */
 
 .pagination > li > a{
