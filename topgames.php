@@ -123,11 +123,11 @@
 				<?php } ?>
 				<h4>Categorias</h4>
 				<div class="list-group">
-					<a href="#" class="list-group-item active">Início</a>
-					<a href="#" class="list-group-item">Cinema e TV</a>
-					<a href="#" class="list-group-item">Música</a>
-					<a href="#" class="list-group-item">Games</a>
-					<a href="#" class="list-group-item">Animes</a>
+					<a href="index.php" class="list-group-item">Início</a>
+					<a href="topmovie.php" class="list-group-item">Cinema e TV</a>
+					<a href="topmusic.php" class="list-group-item">Música</a>
+					<a href="topgames.php" class="list-group-item active">Games</a>
+					<a href="topanime.php" class="list-group-item">Animes</a>
 				</div>
 
 				<h4>Os mais comentados</h4>
