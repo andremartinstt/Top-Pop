@@ -87,13 +87,16 @@
 
 				<?php
 
-					$first_comented = 1;
-					$second_comented = 0;
-					$third_comented = 0;
+					//$first_comented = 3;
+					//$second_comented = 3;
+					//$third_comented = 3;
 
-					$first_id = 0;
-					$second_id = 0;
-					$third_id = 0;
+					//$first_id = 36;
+					//$second_id = 36;
+					//$third_id = 36;
+
+					$qnt_coments = array();
+					//$cont_qnt = 0;
 					
 					while ($row = mysqli_fetch_array($result)) {
 					
@@ -134,10 +137,14 @@
 							//$second_comented = 0;
 							//$third_comented = 0;
 
-							$num_total_reg = $connection->query("SELECT id_comentario FROM comentarios")->num_rows;
+							//$num_total_reg = $connection->query("SELECT id_comentario FROM comentarios")->num_rows;
+
+							//$qnt_coments[$cont_qnt] = $row_cnt["id_noticia"];
+
+							
 
 							//for ($f=0; $f < $num_total_reg ; $f++) { 
-								if($row_cnt["id_noticia"] >= $first_comented){
+								/*if($row_cnt["id_noticia"] >= $first_comented){
 									$first_comented = $row_cnt["id_noticia"];
 									$first_id = $row["id_noticia"];
 								}
@@ -152,15 +159,19 @@
 								if($row_cnt["id_noticia"] >= $third_comented && $row_cnt["id_noticia"] < $second_comented){
 									$third_comented = $row_cnt["id_noticia"];
 									$third_id = $row["id_noticia"];
-								}
+								}*/
 							//}
 
 							//$first_id = 36;
 
 							//$titulo_first = "Sem título";
 
+							$qnt_coments[$row["id_noticia"]] = $row_cnt["id_noticia"];
+
+							//$cont_qnt++;
+
 							//for ($fr=0; $fr < $num_total_reg; $fr++) { 
-							if($row["id_noticia"] == $first_id){
+							/*if($row["id_noticia"] == $first_id){
 								$titulo_first = $row["titulo_noticia"];
 								$id_f = $row["id_noticia"];
 							}
@@ -171,7 +182,7 @@
 							if($row["id_noticia"] == $third_id){
 								$titulo_third = $row["titulo_noticia"];
 								$id_t = $row["id_noticia"];
-							}
+							}*/
 				?>
 
 				<?php } ?>
@@ -196,41 +207,50 @@
 				</div>
 
 				<h4>Os mais comentados</h4>
-				<!--<?php
+				<?php
+						arsort($qnt_coments);
 
-					$sql_rank_cmt = "SELECT * FROM noticias";
-					$result_rank_cmt = mysqli_query($connection, $sql_rank_cmt);
+						$sql_ranking = "SELECT id_noticia, titulo_noticia, conteudo_noticia FROM noticias";
+						$result_ranking = mysqli_query($connection, $sql_ranking);
 
-					//$count = 0;
+						$id_raking = array();
 
-					while ($row_rank = mysqli_fetch_array($result_rank_cmt)){
+						for($i=0; $i<3; $i++){
+							$id_raking[$i] = key($qnt_coments);
+							next($qnt_coments);
+						}
 
-						//$titulo_first = "Sem título";
-
-						//for ($fr=0; $fr < $num_total_reg; $fr++) { 
-							if($row_rank["id_noticia"] == $first_id){
-								$titulo_first = $row_rank["titulo_noticia"];
+						while ($row_ranking = mysqli_fetch_array($result_ranking)){
+							if($row_ranking["id_noticia"] == $id_raking[0]){
+								$titulo_first = $row_ranking["titulo_noticia"];
+								$conteudo_first = $row_ranking["conteudo_noticia"];
 							}
-							//$count++;
-						//}
-					}
+							if($row_ranking["id_noticia"] == $id_raking[1]){
+								$titulo_second = $row_ranking["titulo_noticia"];
+								$conteudo_second = $row_ranking["conteudo_noticia"];
+							}
+							if($row_ranking["id_noticia"] == $id_raking[2]){
+								$titulo_third = $row_ranking["titulo_noticia"];
+								$conteudo_third = $row_ranking["conteudo_noticia"];
+							}
+						}
 
-				?>-->
+
+				?>
 				<a href="#" class="list-group-item">
-					<h4 class="list-group-item-heading"><?php echo $titulo_first." ".$id_f; ?></h4>
-					<p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+					<h4 class="list-group-item-heading"><?php echo $titulo_first; ?></h4>
+					<p class="list-group-item-text"><?php echo $conteudo_first; ?></p>
 				</a>
 				<a href="#" class="list-group-item">
-					<h4 class="list-group-item-heading"><?php echo $titulo_second." ".$id_s;; ?></h4>
-					<p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+					<h4 class="list-group-item-heading"><?php echo $titulo_second; ?></h4>
+					<p class="list-group-item-text"><?php echo $conteudo_second; ?></p>
 				</a>
 				<a href="#" class="list-group-item">
-					<h4 class="list-group-item-heading"><?php echo $titulo_third." ".$id_t;; ?></h4>
-					<p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+					<h4 class="list-group-item-heading"><?php echo $titulo_third; ?></h4>
+					<p class="list-group-item-text"><?php echo $conteudo_third; ?></p>
 				</a>
 				<!--<?php  ?>-->
 			</aside>
-
 		</div>
 		<?php include "includes/pagination.php"; ?>
 	</section>
