@@ -51,6 +51,9 @@
 				<h1 class="section-title">Posts Recentes</h1>
 
 				<?php 
+
+					$qnt_coments = array();
+
 					while ($row = mysqli_fetch_array($result)) {		
 					
 				?>
@@ -67,8 +70,17 @@
 						<?php echo $row["conteudo_noticia"]; ?>
 					</p>
 					<div class="conteudo-botoes">
+
+						<?php
+							$sql_coments = "SELECT id_noticia FROM comentarios WHERE id_noticia=".$row["id_noticia"];
+							$result_coments = mysqli_query($connection, $sql_coments);
+							$row_cnt["id_noticia"] = $result_coments->num_rows;
+
+							$qnt_coments[$row["id_noticia"]] = $row_cnt["id_noticia"];
+						?>
+
 						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>" class="btn btn-default">Ler Mais</a>
-						<a href="#" class="btn btn-primary">Comentários <span class="badge">26</span></a>
+						<a href="#" class="btn btn-primary">Comentários <span class="badge"><?php echo $row_cnt["id_noticia"] ?></span></a>
 					</div>
 				</article>
 
@@ -112,6 +124,58 @@
 					<?php echo "Bem Vindo " ?><a href="newsmanager.php"><?php echo $_SESSION['nome']; ?></a><?php echo "!"; ?>
 					<a href="logout.php">Sair</a>
 				<?php } ?>
+				<h4>Categorias</h4>
+				<div class="list-group">
+					<a href="#" class="list-group-item active">Início</a>
+					<a href="#" class="list-group-item">Cinema e TV</a>
+					<a href="#" class="list-group-item">Música</a>
+					<a href="#" class="list-group-item">Games</a>
+					<a href="#" class="list-group-item">Animes</a>
+				</div>
+
+				<h4>Os mais comentados</h4>
+				<?php
+						arsort($qnt_coments);
+
+						$sql_ranking = "SELECT id_noticia, titulo_noticia, conteudo_noticia FROM noticias";
+						$result_ranking = mysqli_query($connection, $sql_ranking);
+
+						$id_raking = array();
+
+						for($i=0; $i<3; $i++){
+							$id_raking[$i] = key($qnt_coments);
+							next($qnt_coments);
+						}
+
+						while ($row_ranking = mysqli_fetch_array($result_ranking)){
+							if($row_ranking["id_noticia"] == $id_raking[0]){
+								$titulo_first = $row_ranking["titulo_noticia"];
+								$conteudo_first = $row_ranking["conteudo_noticia"];
+							}
+							if($row_ranking["id_noticia"] == $id_raking[1]){
+								$titulo_second = $row_ranking["titulo_noticia"];
+								$conteudo_second = $row_ranking["conteudo_noticia"];
+							}
+							if($row_ranking["id_noticia"] == $id_raking[2]){
+								$titulo_third = $row_ranking["titulo_noticia"];
+								$conteudo_third = $row_ranking["conteudo_noticia"];
+							}
+						}
+
+
+				?>
+				<a href="#" class="list-group-item">
+					<h4 class="list-group-item-heading"><?php echo $titulo_first; ?></h4>
+					<p class="list-group-item-text"><?php echo $conteudo_first; ?></p>
+				</a>
+				<a href="#" class="list-group-item">
+					<h4 class="list-group-item-heading"><?php echo $titulo_second; ?></h4>
+					<p class="list-group-item-text"><?php echo $conteudo_second; ?></p>
+				</a>
+				<a href="#" class="list-group-item">
+					<h4 class="list-group-item-heading"><?php echo $titulo_third; ?></h4>
+					<p class="list-group-item-text"><?php echo $conteudo_third; ?></p>
+				</a>
 			</aside>
 		</div>
 	</section>

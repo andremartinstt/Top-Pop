@@ -87,16 +87,7 @@
 
 				<?php
 
-					//$first_comented = 3;
-					//$second_comented = 3;
-					//$third_comented = 3;
-
-					//$first_id = 36;
-					//$second_id = 36;
-					//$third_id = 36;
-
 					$qnt_coments = array();
-					//$cont_qnt = 0;
 					
 					while ($row = mysqli_fetch_array($result)) {
 					
@@ -119,6 +110,8 @@
 							$sql_coments = "SELECT id_noticia FROM comentarios WHERE id_noticia=".$row["id_noticia"];
 							$result_coments = mysqli_query($connection, $sql_coments);
 							$row_cnt["id_noticia"] = $result_coments->num_rows;
+
+							$qnt_coments[$row["id_noticia"]] = $row_cnt["id_noticia"];
 						?>
 
 						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>" class="btn btn-default">Ler Mais</a>
@@ -131,59 +124,6 @@
 						<?php } ?>
 					</div>
 				</article>
-
-				<?php
-							//$first_comented = 0;
-							//$second_comented = 0;
-							//$third_comented = 0;
-
-							//$num_total_reg = $connection->query("SELECT id_comentario FROM comentarios")->num_rows;
-
-							//$qnt_coments[$cont_qnt] = $row_cnt["id_noticia"];
-
-							
-
-							//for ($f=0; $f < $num_total_reg ; $f++) { 
-								/*if($row_cnt["id_noticia"] >= $first_comented){
-									$first_comented = $row_cnt["id_noticia"];
-									$first_id = $row["id_noticia"];
-								}
-							//}
-							//for ($s=0; $s < $num_total_reg ; $s++) { 
-								if($row_cnt["id_noticia"] >= $second_comented && $row_cnt["id_noticia"] < $first_comented){
-									$second_comented = $row_cnt["id_noticia"];
-									$second_id = $row["id_noticia"];
-								}
-							//}
-							//for ($t=0; $t < $num_total_reg ; $t++) { 
-								if($row_cnt["id_noticia"] >= $third_comented && $row_cnt["id_noticia"] < $second_comented){
-									$third_comented = $row_cnt["id_noticia"];
-									$third_id = $row["id_noticia"];
-								}*/
-							//}
-
-							//$first_id = 36;
-
-							//$titulo_first = "Sem título";
-
-							$qnt_coments[$row["id_noticia"]] = $row_cnt["id_noticia"];
-
-							//$cont_qnt++;
-
-							//for ($fr=0; $fr < $num_total_reg; $fr++) { 
-							/*if($row["id_noticia"] == $first_id){
-								$titulo_first = $row["titulo_noticia"];
-								$id_f = $row["id_noticia"];
-							}
-							if($row["id_noticia"] == $second_id){
-								$titulo_second = $row["titulo_noticia"];
-								$id_s = $row["id_noticia"];
-							}
-							if($row["id_noticia"] == $third_id){
-								$titulo_third = $row["titulo_noticia"];
-								$id_t = $row["id_noticia"];
-							}*/
-				?>
 
 				<?php } ?>
 				
@@ -249,7 +189,6 @@
 					<h4 class="list-group-item-heading"><?php echo $titulo_third; ?></h4>
 					<p class="list-group-item-text"><?php echo $conteudo_third; ?></p>
 				</a>
-				<!--<?php  ?>-->
 			</aside>
 		</div>
 		<?php include "includes/pagination.php"; ?>
