@@ -42,7 +42,22 @@
 
 				<article class="post-top clearfix">
 					<h2 class="post-title">
-						<a class="title-top" href="#">Posição#<?php echo $row_top["posicao_item"]; ?></a>
+						<a class="title-top" href="#">Posição#</script><?php echo $row_top["posicao_item"]; ?></a>
+						<?php 
+							if($row_top["posicao_item"] == 1){				
+						?>
+						<img src="img/medal-gold.png">
+						<?php } ?>
+						<?php 
+							if($row_top["posicao_item"] == 2){				
+						?>
+						<img src="img/medal-silver.png">
+						<?php } ?>
+						<?php 
+							if($row_top["posicao_item"] == 3){				
+						?>
+						<img src="img/medal-bronze.png">
+						<?php } ?>
 					</h2>
 					<a href="#" class="thumb-max pull-left">
 						<img class="img-thumbnail top-thumbnail" src="img/top/<?php echo $row_top['img_item']; ?>">
@@ -75,7 +90,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-				<div class="form-area area-bottom">
+				<div class="form-area area-bottom" id="coment">
 					<form action="coments.php" method="POST" role="form">
 						<br style="clear:both">
 						<h3 style="margin-bottom: 25px;">Escreva um comentário</h3>

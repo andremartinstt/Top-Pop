@@ -9,5 +9,5 @@
 	$sql = "INSERT INTO comentarios VALUES (null, '$nome', '$email', '$comentario', '$id_noticia')";
 	$result = mysqli_query($connection, $sql);
 
-	header("Location: top.php?id_noticia=".$_POST["id_noticia"]);
+	header("Location: top.php?id_noticia=".$_POST["id_noticia"]."#coment");
 ?>
