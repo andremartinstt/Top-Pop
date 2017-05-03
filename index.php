@@ -39,7 +39,7 @@
 					<!-- Contem os Slides -->
 					<div class="carousel-inner" role="listbox">
 						<div class="item active">
-							<img src="http://lorempixel.com/1200/400/city/3" class="img-responsive">
+							<img src="http://lorempixel.com/1200/400/city/5" class="img-responsive">
 							<div class="carousel-caption hidden-xs hidden-sm">
 								<h3>Este é o slide #1</h3>
 								<p>Lorem ipsum dolor sit amet</p>
@@ -96,16 +96,25 @@
 				?>
 
 				<article class="post clearfix">
-					<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>" class="thumb pull-left">
-						<img class="img-thumbnail" src="img/<?php echo $row['img_noticia']; ?>">
-					</a>
-					<h2 class="post-title">
-						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>"><?php echo $row["titulo_noticia"].$row["id_noticia"]; ?></a>
-					</h2>
-					<p><span><?php echo date("d/m/Y", strtotime($row["data_noticia"])); ?></span> por <span><a href="#"><?php echo $row["usuario"]; ?></a></span></p>
-					<p class="text-justify">
-						<?php echo $row["conteudo_noticia"]; ?>
-					</p>
+					<div class="box">
+						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>" class="thumb pull-left">
+							<img class="img-thumbnail" src="img/<?php echo $row['img_noticia']; ?>">
+						</a>
+						<h2 class="post-title">
+							<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>"><?php echo $row["titulo_noticia"].$row["id_noticia"]; ?></a>
+						</h2>
+						<p><span><?php echo date("d/m/Y", strtotime($row["data_noticia"])); ?></span> por <span><a href="#"><?php echo $row["usuario"]; ?></a></span></p>
+						<p class="post-conteudo text-justify">
+							<!-- <?php echo $row["conteudo_noticia"]; ?> -->
+							<!--<?php echo nl2br($row["conteudo_noticia"]); ?>-->
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+					</div>
 					<div class="conteudo-botoes">
 
 						<?php

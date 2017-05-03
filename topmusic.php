@@ -163,15 +163,15 @@
 				?>
 				<a href="#" class="list-group-item">
 					<h4 class="list-group-item-heading"><?php echo $titulo_first; ?></h4>
-					<p class="list-group-item-text"><?php echo $conteudo_first; ?></p>
+					<p class="list-group-item-text"><?php echo $rest = substr ( $conteudo_first , 0, 30 ); ?></p>
 				</a>
 				<a href="#" class="list-group-item">
 					<h4 class="list-group-item-heading"><?php echo $titulo_second; ?></h4>
-					<p class="list-group-item-text"><?php echo $conteudo_second; ?></p>
+					<p class="list-group-item-text"><?php echo $rest = substr ( $conteudo_second , 0, 30 ); ?></p>
 				</a>
 				<a href="#" class="list-group-item">
 					<h4 class="list-group-item-heading"><?php echo $titulo_third; ?></h4>
-					<p class="list-group-item-text"><?php echo $conteudo_third; ?></p>
+					<p class="list-group-item-text"><?php echo $rest = substr ( $conteudo_third , 0, 30 ); ?></p>
 				</a>
 			</aside>
 		</div>

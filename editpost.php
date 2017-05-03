@@ -35,7 +35,7 @@
 							<input type="text" class="form-control" name="titulo-post" value="<?php echo $row['titulo_noticia']; ?>" required="required">
 						</div>
 						<div class="form-group">
-							<textarea class="form-control" rows="3" name="conteudo-post" required="required"><?php echo $row["conteudo_noticia"]; ?></textarea>
+							<textarea class="form-control" rows="3" name="conteudo-post" required="required"  contenteditable=""><?php echo $row["conteudo_noticia"]; ?></textarea>
 						</div>				
 	
 						<button class="btn btn-primary" type="submit">

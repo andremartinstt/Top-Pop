@@ -26,7 +26,7 @@
 						<input type="text" class="form-control" name="titulo-post" placeholder="Título do Post" required="required">
 					</div>
 					<div class="form-group">
-						<textarea class="form-control" rows="3" name="conteudo-post" placeholder="Conteúdo do Post" required="required"></textarea>
+						<textarea class="form-control" rows="3" name="conteudo-post" placeholder="Conteúdo do Post" required="required"  contenteditable=""></textarea>
 					</div>
 					<div class="form-group">
 						<select class="form-control" name="categoria-post">
