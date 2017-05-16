@@ -35,7 +35,9 @@
 							<input type="text" class="form-control" name="titulo-post" value="<?php echo $row['titulo_noticia']; ?>" required="required">
 						</div>
 						<div class="form-group">
-							<textarea class="form-control" rows="3" name="conteudo-post" required="required"  contenteditable=""><?php echo $row["conteudo_noticia"]; ?></textarea>
+							<!-- 75 por linha (aproximadamente faltando 180) -->
+							<textarea class="form-control" id="TxtObservacoes" rows="3" name="conteudo-post" required="required"  contenteditable=""><?php echo $row["conteudo_noticia"]; ?></textarea>
+							<h5><span class="caracteres">255</span> Restantes</h5>
 						</div>				
 	
 						<button class="btn btn-primary" type="submit">
@@ -49,6 +51,15 @@
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<?php } ?>
+	<script type="text/javascript">
+		$(document).on("input", "#TxtObservacoes", function () {
+		    var limite = 255;
+		    var caracteresDigitados = $(this).val().length;
+		    var caracteresRestantes = limite - caracteresDigitados;
+
+		    $(".caracteres").text(caracteresRestantes);
+		});
+	</script>
 </body>
 </html>
 <body>

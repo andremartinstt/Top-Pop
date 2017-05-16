@@ -106,16 +106,10 @@
 						<p><span><?php echo date("d/m/Y", strtotime($row["data_noticia"])); ?></span> por <span><a href="#"><?php echo $row["usuario"]; ?></a></span></p>
 						<p class="post-conteudo text-justify">
 							<!-- <?php echo $row["conteudo_noticia"]; ?> -->
-							<!--<?php echo nl2br($row["conteudo_noticia"]); ?>-->
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							<?php echo nl2br($row["conteudo_noticia"]); ?>
 						</p>
 					</div>
-					<div class="conteudo-botoes">
+					<div class="conteudo-botoes pull-left">
 
 						<?php
 							$sql_coments = "SELECT id_noticia FROM comentarios WHERE id_noticia=".$row["id_noticia"];
@@ -186,19 +180,28 @@
 							}
 						}
 
-
 				?>
+
+				<?php function resume( $var, $limite ){	
+					if (strlen($var) > $limite)	{		
+						$var = substr($var, 0, $limite);		
+						$var = trim($var) . "...";	
+					}
+					return $var;
+					}
+				?>
+
 				<a href="#" class="list-group-item">
 					<h4 class="list-group-item-heading"><?php echo $titulo_first; ?></h4>
-					<p class="list-group-item-text"><?php echo $rest = substr ( $conteudo_first , 0, 30 ); ?></p>
+					<p class="list-group-item-text"><?php echo $rest = resume ( $conteudo_first , 30 ); ?></p>
 				</a>
 				<a href="#" class="list-group-item">
 					<h4 class="list-group-item-heading"><?php echo $titulo_second; ?></h4>
-					<p class="list-group-item-text"><?php echo $rest = substr ( $conteudo_second , 0, 30 ); ?></p>
+					<p class="list-group-item-text"><?php echo $rest = resume ( $conteudo_second , 30 ); ?></p>
 				</a>
 				<a href="#" class="list-group-item">
 					<h4 class="list-group-item-heading"><?php echo $titulo_third; ?></h4>
-					<p class="list-group-item-text"><?php echo $rest = substr ( $conteudo_third , 0, 30 ); ?></p>
+					<p class="list-group-item-text"><?php echo $rest = resume ( $conteudo_third , 30 ); ?></p>
 				</a>
 			</aside>
 		</div>

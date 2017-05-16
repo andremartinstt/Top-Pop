@@ -65,10 +65,11 @@
 						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>"><?php echo $row["titulo_noticia"]; ?></a>
 					</h2>
 					<p><span><?php echo date("d/m/Y", strtotime($row["data_noticia"])); ?></span> por <span><a href="#"><?php echo $row["usuario"]; ?></a></span></p>
-					<p class="text-justify">
-						<?php echo $row["conteudo_noticia"]; ?>
+					<p class="post-conteudo text-justify">
+						<!-- <?php echo $row["conteudo_noticia"]; ?> -->
+						<?php echo nl2br($row["conteudo_noticia"]); ?>
 					</p>
-					<div class="conteudo-botoes">
+					<div class="conteudo-botoes pull-left">
 						<?php
 							$sql_coments = "SELECT id_noticia FROM comentarios WHERE id_noticia=".$row["id_noticia"];
 							$result_coments = mysqli_query($connection, $sql_coments);
@@ -161,17 +162,27 @@
 
 
 				?>
+
+				<?php function resume( $var, $limite ){	
+					if (strlen($var) > $limite)	{		
+						$var = substr($var, 0, $limite);		
+						$var = trim($var) . "...";	
+					}
+					return $var;
+					}
+				?>
+
 				<a href="#" class="list-group-item">
 					<h4 class="list-group-item-heading"><?php echo $titulo_first; ?></h4>
-					<p class="list-group-item-text"><?php echo $rest = substr ( $conteudo_first , 0, 30 ); ?></p>
+					<p class="list-group-item-text"><?php echo $rest = resume ( $conteudo_first , 30 ); ?></p>
 				</a>
 				<a href="#" class="list-group-item">
 					<h4 class="list-group-item-heading"><?php echo $titulo_second; ?></h4>
-					<p class="list-group-item-text"><?php echo $rest = substr ( $conteudo_second , 0, 30 ); ?></p>
+					<p class="list-group-item-text"><?php echo $rest = resume ( $conteudo_second , 30 ); ?></p>
 				</a>
 				<a href="#" class="list-group-item">
 					<h4 class="list-group-item-heading"><?php echo $titulo_third; ?></h4>
-					<p class="list-group-item-text"><?php echo $rest = substr ( $conteudo_third , 0, 30 ); ?></p>
+					<p class="list-group-item-text"><?php echo $rest = resume ( $conteudo_third , 30 ); ?></p>
 				</a>
 			</aside>
 		</div>
