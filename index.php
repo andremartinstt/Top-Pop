@@ -55,7 +55,7 @@
 						</div>
 
 						<div class="item">
-							<img src="http://lorempixel.com/1200/400/city/2" class="img-responsive">
+							<img src="http://lorempixel.com/1200/400/city/3" class="img-responsive">
 							<div class="carousel-caption hidden-xs hidden-sm">
 								<h3>Este é o slide #3</h3>
 								<p>Lorem ipsum dolor sit amet</p>
@@ -151,58 +151,27 @@
 					<a href="topanime.php" class="list-group-item">Animes</a>
 				</div>
 
-				<h4>Os mais comentados</h4>
+				<h4>Mais Populares da Seção</h4>
+				
 				<?php
-						arsort($qnt_coments);
-
-						$sql_ranking = "SELECT id_noticia, titulo_noticia, conteudo_noticia FROM noticias";
-						$result_ranking = mysqli_query($connection, $sql_ranking);
-
-						$id_raking = array();
-
-						for($i=0; $i<3; $i++){
-							$id_raking[$i] = key($qnt_coments);
-							next($qnt_coments);
-						}
-
-						while ($row_ranking = mysqli_fetch_array($result_ranking)){
-							if($row_ranking["id_noticia"] == $id_raking[0]){
-								$titulo_first = $row_ranking["titulo_noticia"];
-								$conteudo_first = $row_ranking["conteudo_noticia"];
-							}
-							if($row_ranking["id_noticia"] == $id_raking[1]){
-								$titulo_second = $row_ranking["titulo_noticia"];
-								$conteudo_second = $row_ranking["conteudo_noticia"];
-							}
-							if($row_ranking["id_noticia"] == $id_raking[2]){
-								$titulo_third = $row_ranking["titulo_noticia"];
-								$conteudo_third = $row_ranking["conteudo_noticia"];
-							}
-						}
-
+					include "includes/ranking-config.php";
 				?>
 
-				<?php function resume( $var, $limite ){	
-					if (strlen($var) > $limite)	{		
-						$var = substr($var, 0, $limite);		
-						$var = trim($var) . "...";	
-					}
-					return $var;
+				<?php 
+
+					function resume( $var, $limite ){	
+						if (strlen($var) > $limite)	{		
+							$var = substr($var, 0, $limite);		
+							$var = trim($var) . "...";	
+						}
+						return $var;
 					}
 				?>
 
-				<a href="#" class="list-group-item">
-					<h4 class="list-group-item-heading"><?php echo $titulo_first; ?></h4>
-					<p class="list-group-item-text"><?php echo $rest = resume ( $conteudo_first , 30 ); ?></p>
-				</a>
-				<a href="#" class="list-group-item">
-					<h4 class="list-group-item-heading"><?php echo $titulo_second; ?></h4>
-					<p class="list-group-item-text"><?php echo $rest = resume ( $conteudo_second , 30 ); ?></p>
-				</a>
-				<a href="#" class="list-group-item">
-					<h4 class="list-group-item-heading"><?php echo $titulo_third; ?></h4>
-					<p class="list-group-item-text"><?php echo $rest = resume ( $conteudo_third , 30 ); ?></p>
-				</a>
+				<?php
+					include "includes/ranking.php";
+				?>
+				
 			</aside>
 		</div>
 		<?php include "includes/pagination.php"; ?>
