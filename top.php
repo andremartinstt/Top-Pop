@@ -18,6 +18,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
 	<title>Top Pop</title>
+	<link rel="shortcut icon" href="img\icons\shortcut.png">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -46,17 +47,17 @@
 						<?php 
 							if($row_top["posicao_item"] == 1){				
 						?>
-						<img src="img/medal-gold.png">
+						<img src="img/icons/medal-gold.png">
 						<?php } ?>
 						<?php 
 							if($row_top["posicao_item"] == 2){				
 						?>
-						<img src="img/medal-silver.png">
+						<img src="img/icons/medal-silver.png">
 						<?php } ?>
 						<?php 
 							if($row_top["posicao_item"] == 3){				
 						?>
-						<img src="img/medal-bronze.png">
+						<img src="img/icons/medal-bronze.png">
 						<?php } ?>
 					</h2>
 					<a href="#" class="thumb-max pull-left">

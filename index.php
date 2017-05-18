@@ -9,6 +9,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
 	<title>Top Pop</title>
+	<link rel="shortcut icon" href="img\icons\shortcut.png">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -124,8 +125,8 @@
 						<?php 
 							if (isset($_SESSION['usuario'])) {
 						?>
-						<a onclick="ConfirmaExclusao('<?php echo $row['id_noticia']; ?>')" class="btn btn-danger">Apagar</a>
 						<a href="editpost.php?id_noticia=<?php echo $row['id_noticia']; ?>" class="btn btn-warning">Editar</a>
+						<a onclick="ConfirmaExclusao('<?php echo $row['id_noticia']; ?>')" class="btn btn-danger">Apagar</a>
 						<?php } ?>
 					</div>
 				</article>

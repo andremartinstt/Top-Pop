@@ -13,14 +13,17 @@
 
 		while ($row_ranking = mysqli_fetch_array($result_ranking)){
 			if($row_ranking["id_noticia"] == $id_raking[0]){
+				$id_first = $row_ranking["id_noticia"];
 				$titulo_first = $row_ranking["titulo_noticia"];
 				$conteudo_first = $row_ranking["conteudo_noticia"];
 			}
 			if($row_ranking["id_noticia"] == $id_raking[1]){
+				$id_second = $row_ranking["id_noticia"];
 				$titulo_second = $row_ranking["titulo_noticia"];
 				$conteudo_second = $row_ranking["conteudo_noticia"];
 			}
-			if($row_ranking["id_noticia"] == $id_raking[2]){
+			if($row_ranking["id_noticia"] == $id_raking[2]){				
+				$id_third = $row_ranking["id_noticia"];
 				$titulo_third = $row_ranking["titulo_noticia"];
 				$conteudo_third = $row_ranking["conteudo_noticia"];
 			}

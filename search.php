@@ -9,6 +9,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
 	<title>Resultados da Pesquisa</title>
+	<link rel="shortcut icon" href="img\icons\shortcut.png">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -68,12 +69,19 @@
 						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>"><?php echo $row["titulo_noticia"].$row["id_noticia"]; ?></a>
 					</h2>
 					<p><span><?php echo $row["data_noticia"]; ?></span> por <span><a href="#"><?php echo $row["usuario"]; ?></a></span></p>
-					<p class="text-justify">
-						<?php echo $row["conteudo_noticia"]; ?>
+					<p class="post-conteudo text-justify">
+						<?php echo nl2br($row["conteudo_noticia"]); ?>
 					</p>
-					<div class="conteudo-botoes">
+					<div class="conteudo-botoes pull-left">
+						<?php
+							$sql_coments = "SELECT id_noticia FROM comentarios WHERE id_noticia=".$row["id_noticia"];
+							$result_coments = mysqli_query($connection, $sql_coments);
+							$row_cnt["id_noticia"] = $result_coments->num_rows;
+
+							$qnt_coments[$row["id_noticia"]] = $row_cnt["id_noticia"];
+						?>
 						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>" class="btn btn-default">Ler Mais</a>
-						<a href="#" class="btn btn-danger">Comentários <span class="badge">26</span></a>
+						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>#coment" class="btn btn-primary">Comentários <span class="badge"><?php echo $row_cnt["id_noticia"] ?></span></a>
 					</div>
 				</article>
 
