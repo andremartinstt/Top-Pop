@@ -6,6 +6,10 @@
 				<nav class="nav-pagination">
 					<div class="center-block">
 						<ul class="pagination">
+							<?php 
+								if($num_paginas > 1 && $pagina <= $num_paginas){
+									//for($j = $inicio; $j <= $fim; $j++){
+							?>
 							<?php
 								$dis_ini = "";
 								if($pagina == 1){
@@ -19,7 +23,7 @@
 							?>
 							<li <?php echo $dis_ini; ?> ><a href="index.php?pagina=<?php echo $pagina-1 ?>">&laquo;<span class="sr-only">Anterior</span></a></li>
 							<?php
-								for ($i=1; $i <= $num_paginas ; $i++) { 
+								for($i = $inicio; $i <= $fim; $i++){ 
 									$estilo = "";
 									if($pagina == $i)
 										$estilo = "class=\"active\"";
@@ -27,6 +31,9 @@
 							<li <?php echo $estilo; ?> ><a href="index.php?pagina=<?php echo $i; ?>"><?php echo $i; ?></a></li>
 							<?php } ?>
 							<li <?php echo $dis_ult; ?> ><a href="index.php?pagina=<?php echo $pagina+1; ?>">&raquo;<span class="sr-only">Próximo</span></a></li>
+							<?php
+								}
+							?>
 						</ul>
 					</div>
 				</nav>

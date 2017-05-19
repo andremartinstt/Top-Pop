@@ -16,4 +16,10 @@
 
 	$sql = "SELECT * FROM noticias order by id_noticia desc LIMIT $pagina_result, $itens_pag";
 	$result = $connection->query($sql) or die($connection->error);
+
+	// Limitar quantidade de itens da paginação por página
+
+	$lim = 4;
+	$inicio = ((($pagina - $lim) > 1) ? $pagina - $lim : 1);
+	$fim = ((($pagina+$lim) < $num_paginas) ? $pagina+$lim : $num_paginas);
 ?>
