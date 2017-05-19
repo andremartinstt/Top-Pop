@@ -66,7 +66,7 @@
 					<h2 class="post-title">
 						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>"><?php echo $row["titulo_noticia"]; ?></a>
 					</h2>
-					<p><span><?php echo date("d/m/Y", strtotime($row["data_noticia"])); ?></span> por <span><a href="#"><?php echo $row["usuario"]; ?></a></span></p>
+					<p><span><?php echo date("d/m/Y", strtotime($row["data_noticia"])); ?></span> por <span><?php echo $row["usuario"]; ?></span></p>
 					<p class="post-conteudo text-justify">
 						<!-- <?php echo $row["conteudo_noticia"]; ?> -->
 						<?php echo nl2br($row["conteudo_noticia"]); ?>

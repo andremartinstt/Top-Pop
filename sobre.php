@@ -32,9 +32,7 @@
 		</div>
 	</section>
 	
-	<?php
-		include "includes/footer.php"
-	?>
+	<?php include "includes/small-footer.php"; ?>
 
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>

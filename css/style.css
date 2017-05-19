@@ -149,7 +149,7 @@ aside div.list-group{
 
 .large-page{
 	position: absolute;
-	background-color: #000;
+	background-color: #101010;
 	color: #fff;
 	padding: 20px;
 	margin-top: 10px;
@@ -160,13 +160,17 @@ aside div.list-group{
 
 .small-page{
 	position: absolute;
-	background-color: #000;
+	background-color: #101010;
 	color: #fff;
 	padding: 20px;
 	margin-top: 10px;
 	bottom: 0;
 	/*clear: both;*/
 	width: 100%;
+}
+
+.text-center{
+	margin-top: 20px;
 }
 
 /* MEDIA QUERIE */

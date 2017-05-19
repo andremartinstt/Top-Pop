@@ -68,7 +68,7 @@
 					<h2 class="post-title">
 						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>"><?php echo $row["titulo_noticia"].$row["id_noticia"]; ?></a>
 					</h2>
-					<p><span><?php echo $row["data_noticia"]; ?></span> por <span><a href="#"><?php echo $row["usuario"]; ?></a></span></p>
+					<p><span><?php echo date("d/m/Y", strtotime($row["data_noticia"])); ?></span> por <span><?php echo $row["usuario"]; ?></span></p>
 					<p class="post-conteudo text-justify">
 						<?php echo nl2br($row["conteudo_noticia"]); ?>
 					</p>
@@ -81,7 +81,7 @@
 							$qnt_coments[$row["id_noticia"]] = $row_cnt["id_noticia"];
 						?>
 						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>" class="btn btn-default">Ler Mais</a>
-						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>#coment" class="btn btn-primary">Comentários <span class="badge"><?php echo $row_cnt["id_noticia"] ?></span></a>
+						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>#coment" class="btn btn-default">Comentários <span class="badge"><?php echo $row_cnt["id_noticia"] ?></span></a>
 					</div>
 				</article>
 
