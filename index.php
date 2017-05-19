@@ -121,7 +121,7 @@
 						?>
 
 						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>" class="btn btn-default">Ler Mais</a>
-						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>#coment" class="btn btn-primary">Comentários <span class="badge"><?php echo $row_cnt["id_noticia"] ?></span></a>
+						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>#coment" class="btn btn-default">Comentários <span class="badge"><?php echo $row_cnt["id_noticia"] ?></span></a>
 						<?php 
 							if (isset($_SESSION['usuario'])) {
 						?>
@@ -145,7 +145,7 @@
 				<?php } ?>
 				<h4>Categorias</h4>
 				<div class="list-group">
-					<a href="index.php" class="list-group-item active">Início</a>
+					<a href="index.php" class="list-group-item item-act active">Início</a>
 					<a href="topmovie.php" class="list-group-item">Cinema e TV</a>
 					<a href="topmusic.php" class="list-group-item">Música</a>
 					<a href="topgames.php" class="list-group-item">Games</a>

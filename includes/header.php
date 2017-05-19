@@ -8,7 +8,9 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="index.php" class="navbar-brand">Top Pop</a>
+					<a href="index.php" class="navbar-brand">
+						<img class="logo-img" src="img\icons\logo.png" width="100">
+					</a>
 				</div>
 				<!-- Inicia Menu -->
 				<div class="collapse navbar-collapse" id="navegacion-fm">

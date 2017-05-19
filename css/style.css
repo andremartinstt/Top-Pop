@@ -9,6 +9,10 @@
 	margin-bottom: 0;
 }
 
+.logo-img{
+	margin-top: -25px;
+}
+
 /* SLIDESHOW */
 
 .slidebox{
@@ -81,10 +85,24 @@ h2.post-title{
 	/*width: 100%;*/
 }
 
+.list-group .item-act{
+	background-color: #000;
+	border-color: #000;
+}
+
+.list-group .item-act:hover{
+	background-color: #000;
+	border-color: #000;
+}
+
 /* ASIDE */
 
 aside{
 	margin-top: 50px;
+}
+
+aside div.list-group{
+	margin-bottom: 35px;
 }
 
 

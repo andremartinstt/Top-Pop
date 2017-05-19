@@ -79,7 +79,7 @@
 							$qnt_coments[$row["id_noticia"]] = $row_cnt["id_noticia"];
 						?>
 						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>" class="btn btn-default">Ler Mais</a>
-						<a href="#" class="btn btn-primary">Comentários <span class="badge"><?php echo $row_cnt["id_noticia"] ?></span></a>
+						<a href="#" class="btn btn-default">Comentários <span class="badge"><?php echo $row_cnt["id_noticia"] ?></span></a>
 					</div>
 				</article>
 
@@ -127,7 +127,7 @@
 				<div class="list-group">
 					<a href="index.php" class="list-group-item">Início</a>
 					<a href="topmovie.php" class="list-group-item">Cinema e TV</a>
-					<a href="topmusic.php" class="list-group-item active">Música</a>
+					<a href="topmusic.php" class="list-group-item item-act active">Música</a>
 					<a href="topgames.php" class="list-group-item">Games</a>
 					<a href="topanime.php" class="list-group-item">Animes</a>
 				</div>
