@@ -82,7 +82,7 @@
 						?>
 
 						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>" class="btn btn-default">Ler Mais</a>
-						<a href="#" class="btn btn-default">Comentários <span class="badge"><?php echo $row_cnt["id_noticia"] ?></span></a>
+						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>#coment" class="btn btn-default">Comentários <span class="badge"><?php echo $row_cnt["id_noticia"] ?></span></a>
 					</div>
 				</article>
 
