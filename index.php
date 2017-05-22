@@ -101,9 +101,9 @@
 						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>" class="thumb pull-left">
 							<img class="img-thumbnail" src="img/<?php echo $row['img_noticia']; ?>">
 						</a>
-						<h2 class="post-title">
+						<h3 class="post-title">
 							<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>"><?php echo $row["titulo_noticia"].$row["id_noticia"]; ?></a>
-						</h2>
+						</h3>
 						<p><span><?php echo date("d/m/Y", strtotime($row["data_noticia"])); ?></span> por <span><?php echo $row["usuario"]; ?></span></p>
 						<p class="post-conteudo text-justify">
 							<!-- <?php echo $row["conteudo_noticia"]; ?> -->
