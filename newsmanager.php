@@ -24,13 +24,15 @@
 			<section class="col-md-6">
 				<form action="newsconfig.php" method="POST" enctype="multipart/form-data">
 					<div class="form-group">
-						<input type="text" class="form-control" name="titulo-post" placeholder="Título do Post" required="required">
+						<input type="text" class="form-control form-news" name="titulo-post" placeholder="Título do Post" required="required">
 					</div>
 					<div class="form-group">
-						<textarea class="form-control" rows="3" name="conteudo-post" placeholder="Conteúdo do Post" required="required"  contenteditable=""></textarea>
+						<!-- 75 por linha (aproximadamente faltando 180) -->
+						<textarea class="form-control form-news" id="TxtObservacoes" rows="3" name="conteudo-post" placeholder="Conteúdo do Post" required="required"  contenteditable=""></textarea>
+						<h5><span class="caracteres">255</span> Restantes</h5>
 					</div>
 					<div class="form-group">
-						<select class="form-control" name="categoria-post">
+						<select class="form-control form-news" name="categoria-post">
 							<option value="cinema">Cinema e TV</option>
 							<option value="musica">Música</option>
 							<option value="games">Games</option>
@@ -63,6 +65,15 @@
 
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(document).on("input", "#TxtObservacoes", function () {
+		    var limite = 255;
+		    var caracteresDigitados = $(this).val().length;
+		    var caracteresRestantes = limite - caracteresDigitados;
+
+		    $(".caracteres").text(caracteresRestantes);
+		});
+	</script>
 </body>
 </html>
 <body>

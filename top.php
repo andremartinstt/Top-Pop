@@ -66,8 +66,8 @@
 					<h2 class="post-title">
 						<?php echo $row_top["titulo_item"]; ?>
 					</h2>
-					<p class="text-justify">
-						<?php echo $row_top["conteudo_item"]; ?>
+					<p class="post-conteudo text-justify">
+						<?php echo nl2br($row_top["conteudo_item"]); ?>
 					</p>
 				</article>
 

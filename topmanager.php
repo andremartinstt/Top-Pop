@@ -40,15 +40,15 @@
 				<?php for ($i=0; $i <= 2; $i++) { 
 	
 				?>
-					<div class="post">
+					<div class="post-ranking">
 						<h3>Posição#<?php echo $i + 1; ?></h3>
 						<input type="hidden" name="posicao-top[]" value="<?php echo $i; ?>">
 						<input type="hidden" name="id-top[]" value="<?php echo $id; ?>">
 						<div class="form-group">
-							<input type="text" class="form-control" name="titulo-top[]" placeholder="Título do Filme" required="required">
+							<input type="text" class="form-control form-top" name="titulo-top[]" placeholder="Título do Filme" required="required">
 						</div>
 						<div class="form-group">
-							<textarea class="form-control" rows="3" name="conteudo-top[]" placeholder="Conteúdo do Filme" required="required"></textarea>
+							<textarea class="form-control form-top" rows="3" name="conteudo-top[]" placeholder="Conteúdo do Filme" required="required"></textarea>
 						</div>					
 						<div class="form-group">
 						    <input type="file" name="imagem-top[]" id="inputFile">

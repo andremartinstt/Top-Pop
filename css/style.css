@@ -41,6 +41,13 @@ h1.section-title{
 	font-size: 12pt;
 }
 
+.post-ranking{
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #999;
+	width: 770px;
+}
+
 .post-top .post-title a.title-top{
 	color: #333333;
 }
@@ -93,6 +100,14 @@ h2.post-title{
 .list-group .item-act:hover{
 	background-color: #000;
 	border-color: #000;
+}
+
+.form-group .form-news{
+	width: 520px;
+}
+
+.form-group .form-top{
+	width: 770px;
 }
 
 /* ASIDE */
