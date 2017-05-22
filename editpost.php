@@ -33,11 +33,11 @@
 					<form action="posteditado.php" method="POST">
 						<input type="hidden" name="id_noticia" value="<?php echo (int)$_GET["id_noticia"]; ?>">
 						<div class="form-group">
-							<input type="text" class="form-control" name="titulo-post" value="<?php echo $row['titulo_noticia']; ?>" required="required">
+							<input type="text" class="form-control form-news" name="titulo-post" value="<?php echo $row['titulo_noticia']; ?>" required="required">
 						</div>
 						<div class="form-group">
 							<!-- 75 por linha (aproximadamente faltando 180) -->
-							<textarea class="form-control" id="TxtObservacoes" rows="3" name="conteudo-post" required="required"  contenteditable=""><?php echo $row["conteudo_noticia"]; ?></textarea>
+							<textarea class="form-control form-news" id="TxtObservacoes" rows="3" name="conteudo-post" required="required"  contenteditable=""><?php echo $row["conteudo_noticia"]; ?></textarea>
 							<h5><span class="caracteres">255</span> Restantes</h5>
 						</div>				
 	

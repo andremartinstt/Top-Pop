@@ -124,7 +124,9 @@
 					
 						<hr>
 						<p><strong><?php echo $row_coment["nome_usuario"]; ?>:</strong></p>
-						<p><?php echo $row_coment["conteudo_comentario"]; ?></p>
+						<p>
+							<?php echo nl2br($row_coment["conteudo_comentario"]); ?>
+						</p>
 				
 				<?php } ?>
 				</div>

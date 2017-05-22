@@ -21,7 +21,7 @@
 		
 ?>
 <a href="top.php?id_noticia=<?php echo $id_third ?>" class="list-group-item">
-	<h4 class="list-group-item-heading"><?php echo $titulo_third; ?></h4>
+	<h4 class="list-group-item-heading"><?php echo $rest = resume ( $titulo_third , 25 ); ?></h4>
 	<p class="list-group-item-text"><?php echo $rest = resume ( $conteudo_third , 30 ); ?></p>
 </a>
 <?php } ?>

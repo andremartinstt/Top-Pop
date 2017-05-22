@@ -105,7 +105,7 @@
 							<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>"><?php echo $row["titulo_noticia"].$row["id_noticia"]; ?></a>
 						</h3>
 						<p><span><?php echo date("d/m/Y", strtotime($row["data_noticia"])); ?></span> por <span><?php echo $row["usuario"]; ?></span></p>
-						<p class="post-conteudo text-justify">
+						<p class="post-conteudo">
 							<!-- <?php echo $row["conteudo_noticia"]; ?> -->
 							<?php echo nl2br($row["conteudo_noticia"]); ?>
 						</p>
