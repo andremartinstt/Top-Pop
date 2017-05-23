@@ -28,8 +28,7 @@
 					</div>
 					<div class="form-group">
 						<!-- 75 por linha (aproximadamente faltando 180) -->
-						<textarea class="form-control form-news" id="TxtObservacoes" rows="3" name="conteudo-post" placeholder="Conteúdo do Post" required="required"  contenteditable=""></textarea>
-						<h5><span class="caracteres">255</span> Restantes</h5>
+						<textarea class="form-control form-news" rows="3" name="conteudo-post" placeholder="Conteúdo do Post" required="required"  contenteditable=""></textarea>
 					</div>
 					<div class="form-group">
 						<select class="form-control form-news" name="categoria-post">
@@ -65,15 +64,7 @@
 
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script type="text/javascript">
-		$(document).on("input", "#TxtObservacoes", function () {
-		    var limite = 255;
-		    var caracteresDigitados = $(this).val().length;
-		    var caracteresRestantes = limite - caracteresDigitados;
-
-		    $(".caracteres").text(caracteresRestantes);
-		});
-	</script>
+	
 </body>
 </html>
 <body>

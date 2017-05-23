@@ -6,6 +6,7 @@
 <?php
 	$sql = "SELECT * FROM noticias WHERE id_noticia =".$_GET["id_noticia"];
 	$result = mysqli_query($connection, $sql);
+
 ?>
 
 <!DOCTYPE html>
@@ -102,7 +103,8 @@
 							<input type="email" name="email" class="form-control" id="email" placeholder="E-mail" required>
 						</div>
 						<div class="form-group">
-							<textarea class="form-control" type="textarea" name="message" id="message" placeholder="Mensagem" rows="7"></textarea>
+							<textarea class="form-control" id="TxtCaracter" type="textarea" name="message" id="message" placeholder="Mensagem" rows="7" maxlength="700"></textarea>
+							<h5><span class="caracteres">700</span> Restantes</h5>
 						</div>
 						<input type="hidden" name="id_noticia" value="<?php echo $_GET['id_noticia']; ?>">
 						<button type="submit" id="submit" name="submit" class="btn btn-primay">Comentar</button>
@@ -127,6 +129,11 @@
 						<p>
 							<?php echo nl2br($row_coment["conteudo_comentario"]); ?>
 						</p>
+						<?php 
+							if (isset($_SESSION['usuario'])) {
+						?>
+							<a onclick="ConfirmaExclusao('<?php echo $row_coment["id_comentario"]; ?>')" class="btn btn-danger">Apagar</a>
+						<?php } ?>
 				
 				<?php } ?>
 				</div>
@@ -140,6 +147,23 @@
 
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		// Script para contar caracteres
+		$(document).on("input", "#TxtCaracter", function () {
+		    var limite = 700;
+		    var caracteresDigitados = $(this).val().length;
+		    var caracteresRestantes = limite - caracteresDigitados;
+
+		    $(".caracteres").text(caracteresRestantes);
+		});
+
+		// Script para exclusão de comentários
+		function ConfirmaExclusao(id) {
+			if( confirm( 'Confirma Exclusão?' ) ) {
+			  	location.href = "delete-coment.php?id_comentario=" + id;
+			}
+		}
+	</script>
 
 	<?php } ?>
 </body>
