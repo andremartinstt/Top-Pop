@@ -34,6 +34,11 @@
 			<section class="col-md-9">
 
 				<h1 class="section-title"><?php echo $row["titulo_noticia"]; ?></h1>
+				<p>
+					<h3 class="subtitulo_top">
+						<?php echo $row["conteudo_noticia"]; ?>
+					</h3>										
+				</p>
 
 				<?php 
 					$sql_top = "SELECT * FROM item_noticia WHERE id_noticia =".$_GET["id_noticia"]." order by posicao_item desc";
@@ -67,7 +72,7 @@
 					<h2 class="post-title">
 						<?php echo $row_top["titulo_item"]; ?>
 					</h2>
-					<p class="post-conteudo text-justify">
+					<p class="post-conteudo">
 						<?php echo nl2br($row_top["conteudo_item"]); ?>
 					</p>
 				</article>
