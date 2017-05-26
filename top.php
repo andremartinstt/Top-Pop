@@ -36,7 +36,7 @@
 				<h1 class="section-title"><?php echo $row["titulo_noticia"]; ?></h1>
 				<p>
 					<h3 class="subtitulo_top">
-						<?php echo $row["conteudo_noticia"]; ?>
+						<?php echo nl2br($row["conteudo_noticia"]); ?>
 					</h3>										
 				</p>
 
@@ -75,6 +75,11 @@
 					<p class="post-conteudo">
 						<?php echo nl2br($row_top["conteudo_item"]); ?>
 					</p>
+					<?php 
+						if (isset($_SESSION['usuario'])) {
+					?>
+					<a href="edittop.php?id_item=<?php echo $row_top['id_item']; ?>" class="btn btn-warning">Editar</a>
+					<?php } ?>
 				</article>
 
 				<?php } ?>

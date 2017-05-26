@@ -1,9 +1,9 @@
 <?php 
 	require_once("config/connection.php");
 
-	$id_noticia = (int)$_GET["id_noticia"];
+	$id_item = (int)$_GET["id_item"];
 
-	$sql = "SELECT * FROM noticias WHERE id_noticia=$id_noticia";
+	$sql = "SELECT * FROM item_noticia WHERE id_item=$id_item";
 
 	$result = mysqli_query($connection,$sql);
 ?>
@@ -30,14 +30,15 @@
 	<div class="container box-contato">
 		<div class="row">
 			<section class="col-md-6">
-					<form action="posteditado.php" method="POST">
-						<input type="hidden" name="id_noticia" value="<?php echo (int)$_GET["id_noticia"]; ?>">
+					<form action="topeditado.php" method="POST">
+						<input type="hidden" name="id_noticia" value="<?php echo $row['id_noticia'] ?>">
+						<input type="hidden" name="id_item" value="<?php echo (int)$_GET["id_item"]; ?>">
 						<div class="form-group">
-							<input type="text" class="form-control form-news" name="titulo-post" value="<?php echo $row['titulo_noticia']; ?>" required="required">
+							<input type="text" class="form-control form-news" name="titulo-item" value="<?php echo $row['titulo_item']; ?>" required="required">
 						</div>
 						<div class="form-group">
 							<!-- 75 por linha (aproximadamente faltando 180) -->
-							<textarea class="form-control form-news" rows="3" name="conteudo-post" required="required"  contenteditable=""><?php echo $row["conteudo_noticia"]; ?></textarea>
+							<textarea class="form-control form-news" rows="3" name="conteudo-item" required="required"  contenteditable=""><?php echo $row["conteudo_item"]; ?></textarea>
 						</div>				
 	
 						<button class="btn btn-primary" type="submit">

@@ -28,7 +28,7 @@
 					</div>
 					<div class="form-group">
 						<!-- 75 por linha (aproximadamente faltando 180) -->
-						<textarea class="form-control form-news" rows="3" name="conteudo-post" placeholder="Conteúdo do Post" required="required"  contenteditable=""></textarea>
+						<textarea class="form-control form-news justify" rows="3" name="conteudo-post" placeholder="Conteúdo do Post" required="required"  contenteditable=""></textarea>
 					</div>
 					<div class="form-group">
 						<select class="form-control form-news" name="categoria-post">
