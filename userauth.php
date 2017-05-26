@@ -7,8 +7,9 @@
 
 	$user = $_POST['user'];
 	$password = $_POST['password'];
+	$cript = md5($password);
 
-	$sql = "SELECT * FROM adm WHERE usuario = '$user' AND senha = '$password'";
+	$sql = "SELECT * FROM adm WHERE usuario = '$user' AND senha = '$cript'";
 	$result = mysqli_query($connection, $sql);
 	$row = mysqli_fetch_assoc($result);
 

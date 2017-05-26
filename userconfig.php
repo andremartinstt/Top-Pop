@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
 	<title>Envio de E-mail</title>
+
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -15,8 +16,9 @@
 	$nome = $_POST["nome"];
 	$user = $_POST["usuario"];
 	$senha = $_POST["senha"];
+	$cript = md5($senha);
 
-	$result = "INSERT INTO adm (id, usuario, senha, nome) VALUES (null, '$user', '$senha', '$nome')";
+	$result = "INSERT INTO adm (id, usuario, senha, nome) VALUES (null, '$user', '$cript', '$nome')";
 
 	if(!mysqli_query($connection,$result)){
 			echo "Falha no Cadastro!";
