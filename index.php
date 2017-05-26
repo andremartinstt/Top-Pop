@@ -99,6 +99,7 @@
 				<article class="post clearfix">
 					<div class="box">
 						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>" class="thumb pull-left">
+							<!-- 1600 x 1000 -->
 							<img class="img-thumbnail" src="img/<?php echo $row['img_noticia']; ?>">
 						</a>
 						<h3 class="post-title">
