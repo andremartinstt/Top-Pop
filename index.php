@@ -40,26 +40,26 @@
 					<!-- Contem os Slides -->
 					<div class="carousel-inner" role="listbox">
 						<div class="item active">
-							<img src="img/slide/slide1.jpg" class="img-responsive">
+							<img src="img/slide/slide5.jpg" class="img-responsive">
 							<div class="carousel-caption hidden-xs hidden-sm">
-								<h3>Este é o slide #1</h3>
-								<p>Lorem ipsum dolor sit amet</p>
+								<!--<h3>Este é o slide #1</h3>
+								<p>Lorem ipsum dolor sit amet</p>-->
 							</div>
 						</div>
 
 						<div class="item">
-							<img src="img/slide/slide2.jpg" class="img-responsive">
+							<img src="img/slide/slide7.png" class="img-responsive">
 							<div class="carousel-caption hidden-xs hidden-sm">
-								<h3>Este é o slide #2</h3>
-								<p>Lorem ipsum dolor sit amet</p>
+								<!--<h3>Este é o slide #1</h3>
+								<p>Lorem ipsum dolor sit amet</p>-->
 							</div>
 						</div>
 
 						<div class="item">
-							<img src="img/slide/slide3.jpg" class="img-responsive">
+							<img src="img/slide/slide8.png" class="img-responsive">
 							<div class="carousel-caption hidden-xs hidden-sm">
-								<h3>Este é o slide #3</h3>
-								<p>Lorem ipsum dolor sit amet</p>
+								<!--<h3>Este é o slide #1</h3>
+								<p>Lorem ipsum dolor sit amet</p>-->
 							</div>
 						</div>
 					</div>

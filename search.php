@@ -50,7 +50,7 @@
 
 					$pagina_result = ($pagina-1)*$itens_pag; // A partir do registro 0, pega 10 registros, etc
 
-					$sql = "SELECT * FROM noticias WHERE titulo_noticia LIKE '%$search_valor' order by id_noticia desc LIMIT $pagina_result, $itens_pag";
+					$sql = "SELECT * FROM noticias WHERE titulo_noticia LIKE '%$search_valor%' order by id_noticia desc LIMIT $pagina_result, $itens_pag";
 					$result = $connection->query($sql) or die($connection->error); 
 				?>
 
