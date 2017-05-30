@@ -19,13 +19,6 @@
 		include "includes/header.php"
 	?>
 
-	<!--<section class="jumbotron">
-		<div class="container">
-			<h1>Top Pop</h1>
-			<p>Ranking dos assuntos da cultura pop</p>
-		</div>
-	</section>-->
-
 	<section class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -38,6 +31,7 @@
 					</ol>
 
 					<!-- Contem os Slides -->
+					<!-- 1200 x 400 -->
 					<div class="carousel-inner" role="listbox">
 						<div class="item active">
 							<img src="img/slide/slide5.jpg" class="img-responsive">
@@ -50,16 +44,12 @@
 						<div class="item">
 							<img src="img/slide/slide7.png" class="img-responsive">
 							<div class="carousel-caption hidden-xs hidden-sm">
-								<!--<h3>Este é o slide #1</h3>
-								<p>Lorem ipsum dolor sit amet</p>-->
 							</div>
 						</div>
 
 						<div class="item">
 							<img src="img/slide/slide8.png" class="img-responsive">
 							<div class="carousel-caption hidden-xs hidden-sm">
-								<!--<h3>Este é o slide #1</h3>
-								<p>Lorem ipsum dolor sit amet</p>-->
 							</div>
 						</div>
 					</div>
@@ -99,7 +89,7 @@
 				<article class="post clearfix">
 					<div class="box">
 						<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>" class="thumb pull-left">
-							<!-- 1600 x 1000 -->
+							<!-- 1600 x 1000 / 1300 x 800-->
 							<img class="img-thumbnail" src="img/<?php echo $row['img_noticia']; ?>">
 						</a>
 						<h3 class="post-title">
