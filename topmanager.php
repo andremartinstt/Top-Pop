@@ -37,7 +37,7 @@
 			<section class="col-md-6">
 				<form action="topconfig.php" method="POST" enctype="multipart/form-data">
 
-				<?php for ($i=0; $i <= 2; $i++) { 
+				<?php for ($i=0; $i <= 9; $i++) { 
 	
 				?>
 					<div class="post-ranking">

@@ -42,13 +42,13 @@
 						</div>
 
 						<div class="item">
-							<img src="img/slide/slide7.png" class="img-responsive">
+							<img src="img/slide/slide7.jpg" class="img-responsive">
 							<div class="carousel-caption hidden-xs hidden-sm">
 							</div>
 						</div>
 
 						<div class="item">
-							<img src="img/slide/slide8.png" class="img-responsive">
+							<img src="img/slide/slide8.jpg" class="img-responsive">
 							<div class="carousel-caption hidden-xs hidden-sm">
 							</div>
 						</div>
@@ -80,6 +80,10 @@
 
 				<?php
 
+					if($num_total == 0){
+						echo "<br/><br/><h1 class='sem-noticia'>Infelizmente ainda não existem notícias nessa seção</h1>";
+					}
+
 					$qnt_coments = array();
 					
 					while ($row = mysqli_fetch_array($result)) {
@@ -93,7 +97,7 @@
 							<img class="img-thumbnail" src="img/<?php echo $row['img_noticia']; ?>">
 						</a>
 						<h3 class="post-title">
-							<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>"><?php echo $row["titulo_noticia"].$row["id_noticia"]; ?></a>
+							<a href="top.php?id_noticia=<?php echo $row['id_noticia']; ?>"><?php echo $row["titulo_noticia"]; ?></a>
 						</h3>
 						<p><span><?php echo date("d/m/Y", strtotime($row["data_noticia"])); ?></span> por <span><?php echo $row["usuario"]; ?></span></p>
 						<p class="post-conteudo">

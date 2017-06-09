@@ -4,7 +4,7 @@
 
 <?php
 
-	for ($i=0; $i <= 2; $i++) {
+	for ($i=0; $i <= 9; $i++) {
 		
 		$titulo[$i] = $_POST["titulo-top"][$i];
 		$conteudo[$i] = $_POST["conteudo-top"][$i];

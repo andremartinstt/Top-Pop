@@ -52,6 +52,10 @@
 
 				<?php
 
+					if($num_total == 0){
+						echo "<br/><br/><h1 class='sem-noticia'>Infelizmente ainda não existem notícias nessa seção</h1>";
+					}
+
 					$qnt_coments = array();
 					
 					while ($row = mysqli_fetch_array($result)) {		

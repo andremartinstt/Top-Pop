@@ -122,6 +122,11 @@ h3.subtitulo_top{
 	width: 770px;
 }
 
+h1.sem-noticia{
+	margin-bottom: 155px;
+	color: #8c8c8c;
+}
+
 /* ASIDE */
 
 aside{
