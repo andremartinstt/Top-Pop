@@ -130,7 +130,7 @@
 				
 			</section>
 
-			<aside class="col-md-3">
+			<aside class="col-md-3 hidden-xs hidden-sm">
 				<?php
 					if (isset($_SESSION['usuario'])) {
 						
